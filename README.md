@@ -1,2 +1,2 @@
 # CMSC434Project
-# First file
+This is the first file
