@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d3d3d3;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 960px;
+  width: 640px;
+  background-color: white;
+}
+
+.tabs {
+  overflow: hidden;
+  border: 1px solid #62d2e8;
+  background-color: #48cae4;
+}
+
+.tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tabs button:hover {
+  background-color: #24bfde;
+}
+
+.tabs button.active {
+  background-color: #00b4d8;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+}
