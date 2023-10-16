@@ -14,7 +14,7 @@
   --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  --h1-font-size: 2rem;
+  --h1-font-size: 2.25rem;
   --normal-font-size: 1rem;
 }
 
@@ -56,7 +56,8 @@ img {
 .section-title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
-  text-align: center;
+  /* text-align: center; */
+  padding-left: 20px;
   padding-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -156,15 +157,18 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .tip-card {
-  width: 500px;
-  height: 150px;
+  width: 600px;
+  height: 125px;
   background: linear-gradient(var(--body-color), var(--first-color-alt));
   position: relative;
-  display: grid;
-  place-content: center;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
   border-radius: 10px;
   overflow: hidden;
   color: white;
