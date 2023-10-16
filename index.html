@@ -9,20 +9,52 @@
   <body>
     <script src="index.js" defer></script>
     <div class="container">
-      <div class="tabs">
-        <button class="tablinks" onclick="openTab(event, 'text')">Tips</button>
-        <button class="tablinks" onclick="openTab(event, 'choices')">
-          Choices
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'profile')">
-          Profile
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'todo')">To Do</button>
-        <button class="tablinks" onclick="openTab(event, 'colors')">
-          Colors
-        </button>
-      </div>
-
+        <header class="header" id="header">
+            <nav class="nav">
+              <a href="#" class="nav-logo">Name</a>
+      
+              <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                  <li class="nav__item">
+                    <a href="#home" class="nav-link active-link">
+                      <i class="bx bx-home-alt nav-icon"></i>
+                      <span class="nav__name">Home</span>
+                    </a>
+                  </li>
+      
+                  <li class="nav__item">
+                    <a href="#about" class="nav-link">
+                      <i class="bx bx-user nav-icon"></i>
+                      <span class="nav__name">About</span>
+                    </a>
+                  </li>
+      
+                  <li class="nav__item">
+                    <a href="#skills" class="nav-link">
+                      <i class="bx bx-book-alt nav-icon"></i>
+                      <span class="nav__name">Skills</span>
+                    </a>
+                  </li>
+      
+                  <li class="nav__item">
+                    <a href="#portfolio" class="nav-link">
+                      <i class="bx bx-briefcase-alt nav-icon"></i>
+                      <span class="nav__name">Portfolio</span>
+                    </a>
+                  </li>
+      
+                  <li class="nav__item">
+                    <a href="#contactme" class="nav-link">
+                      <i class="bx bx-message-square-detail nav-icon"></i>
+                      <span class="nav__name">Contactme</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+      
+              <img src="assets/img/profileImg.png" alt="profile" class="nav-img" />
+            </nav>
+          </header>
       </div>
     </div>
   </body>
