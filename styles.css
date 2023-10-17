@@ -179,7 +179,7 @@ img {
 /*=============== CALENDAR ===============*/
 
 .month {
-  padding: 70px 25px;
+  padding: 4rem;
   width: 100%;
   background: var(--body-color);
   text-align: center;
@@ -192,24 +192,14 @@ img {
 
 .month ul li {
   color: var(--text-color);
-  font-size: 20px;
+  font-size: 2rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-.month .prev {
-  float: left;
-  padding-top: 10px;
-}
-
-.month .next {
-  float: right;
-  padding-top: 10px;
+  letter-spacing: 0.2rem;
 }
 
 .weekdays {
   margin: 0;
-  padding: 10px 0;
+  padding: 1rem 0rem;
   background-color: var(--container-color);
 }
 
@@ -217,11 +207,12 @@ img {
   display: inline-block;
   width: 13.6%;
   color: var(--first-color);
+  font-size: 1rem;
   text-align: center;
 }
 
 .days {
-  padding: 10px 0;
+  padding: 1rem 0;
   background: white;
   margin: 0;
 }
@@ -231,13 +222,13 @@ img {
   display: inline-block;
   width: 13.6%;
   text-align: center;
-  margin-bottom: 5px;
-  font-size:12px;
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
   color: var(--title-color);
 }
 
 .days li .active {
-  padding: 5px;
+  padding: 0.5rem;
   background: var(--body-color);
   color: white !important
 }
@@ -248,7 +239,6 @@ img {
 
 @media screen and (max-width: 420px) {
   .weekdays li, .days li {width: 12.5%;}
-  .days li .active {padding: 2px;}
 }
 
 @media screen and (max-width: 290px) {
