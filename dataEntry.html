@@ -16,7 +16,11 @@
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="index.html" class="nav-logo">Health</a>
+        <button class="data-entry-btn">Cancel</button>
+        <img src="Assets/back.png" width="30px" />
+        <h1 class="data-date">June 24, 2023</h1>
+        <img src="Assets/next.png" width="30px" />
+        <button class="data-entry-btn">Save</button>
 
         <div class="nav-menu" id="nav-menu">
           <ul class="nav-list">
@@ -56,64 +60,64 @@
             </li>
           </ul>
         </div>
-        <img src="Assets/strawberries.png" alt="" class="nav-img" />
       </nav>
     </header>
 
-    <!--=============== CALENDAR ===============-->
+    <!--======= DATA ENTRY CONTENT =======-->
     <main class="content">
-      <h1 class="section-title" style="margin: 0">Calendar</h1>
-      <div class="month">      
-        <ul>
-          <li>
-            August<br>
-            <span style="font-size:18px">2023</span>
-          </li>
-        </ul>
+      <h2 class="entry-title">Mood</h2>
+      <div class="entry-selection">
+        <p>Energized</p>
+        <p>Happy</p>
+        <p>Neutral</p>
+        <p>Sad</p>
+        <p>Stressed</p>
+        <p>Angry</p>
       </div>
-      
-      <ul class="weekdays">
-        <li>Mo</li>
-        <li>Tu</li>
-        <li>We</li>
-        <li>Th</li>
-        <li>Fr</li>
-        <li>Sa</li>
-        <li>Su</li>
-      </ul>
-      
-      <ul class="days">  
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li><span class="active">10</span></li>
-        <li>11</li>
-        <li>12</li>
-        <li>13</li>
-        <li>14</li>
-        <li>15</li>
-        <li>16</li>
-        <li>17</li>
-        <li>18</li>
-        <li>19</li>
-        <li>20</li>
-        <li>21</li>
-        <li>22</li>
-        <li>23</li>
-        <li>24</li>
-        <li>25</li>
-        <li>26</li>
-        <li>27</li>
-        <li>28</li>
-        <li>29</li>
-        <li>30</li>
-        <li>31</li>
+      <hr class="divider" />
+
+      <h2 class="entry-title">Period Flow</h2>
+      <div class="entry-selection">
+        <p>Spotting</p>
+        <p>Light</p>
+        <p>Medium</p>
+        <p>Heavy</p>
+      </div>
+      <hr class="divider" />
+
+      <h2 class="entry-title">Weight</h2>
+      <div class="input-align">
+        <input class="input" type="number" />
+        <p>pounds</p>
+      </div>
+      <hr class="divider" />
+
+      <h2 class="entry-title">Food</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Calories</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apple</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>Hamburger</td>
+            <td>354</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="data-entry-btn" id="add-button">Add</button>
+      <hr class="divider" />
+
+      <h2 class="entry-title">Goals</h2>
+      <hr class="divider" />
+
+      <h2 class="entry-title">Notes</h2>
     </main>
 
     <script src="index.js" defer></script>

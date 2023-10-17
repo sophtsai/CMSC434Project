@@ -15,7 +15,7 @@
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   --h1-font-size: 2.25rem;
-  --normal-font-size: 1rem;
+  --normal-font-size: 1.25rem;
 }
 
 * {
@@ -56,9 +56,8 @@ img {
 .section-title {
   font-size: var(--h1-font-size);
   color: var(--text-color);
-  /* text-align: center; */
   padding-left: 20px;
-  padding-top: 1.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -177,7 +176,6 @@ img {
 }
 
 /*=============== CALENDAR ===============*/
-
 .month {
   padding: 4rem;
   width: 100%;
@@ -230,17 +228,126 @@ img {
 .days li .active {
   padding: 0.5rem;
   background: var(--body-color);
-  color: white !important
+  color: white !important;
 }
 
-@media screen and (max-width:720px) {
-  .weekdays li, .days li {width: 13.1%;}
+@media screen and (max-width: 720px) {
+  .weekdays li,
+  .days li {
+    width: 13.1%;
+  }
 }
 
 @media screen and (max-width: 420px) {
-  .weekdays li, .days li {width: 12.5%;}
+  .weekdays li,
+  .days li {
+    width: 12.5%;
+  }
 }
 
 @media screen and (max-width: 290px) {
-  .weekdays li, .days li {width: 12.2%;}
+  .weekdays li,
+  .days li {
+    width: 12.2%;
+  }
+}
+
+/*========= DATA ENTRY =========*/
+.data-date {
+  color: var(--title-color);
+}
+
+.data-entry-btn {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  background: var(--title-color);
+  font-size: var(--normal-font-size);
+  color: white;
+  border: none;
+}
+
+.divider {
+  background: var(--text-color);
+  height: 2px;
+}
+
+.entry-title {
+  font-size: 1.75rem;
+  color: var(--title-color);
+  padding-left: 20px;
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.entry-selection {
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  gap: 2.5rem;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+}
+
+.input {
+  width: 100px;
+  height: 50px;
+  background-color: #f5f5f5;
+  font-size: var(--normal-font-size);
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 0.15rem 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  border-bottom: 2px solid transparent;
+  border-color: var(--first-color);
+  line-height: 1.15;
+}
+
+.input-align {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+}
+
+#add-button {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  /* background: var(--text-color); */
+  padding: 0.5rem 1rem;
+}
+
+/*========= TABLE =========*/
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 20px;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: var(--title-color);
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  font-size: var(--normal-font-size);
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f5f5f5;
 }
