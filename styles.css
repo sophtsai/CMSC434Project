@@ -315,10 +315,9 @@ img {
   font-weight: 600;
 }
 
-#add-button {
+.add-button {
   margin-left: 20px;
   margin-bottom: 10px;
-  /* background: var(--text-color); */
   padding: 0.5rem 1rem;
 }
 
