@@ -17,9 +17,9 @@
     <header class="header" id="header">
       <nav class="nav container">
         <button class="data-entry-btn">Cancel</button>
-        <img src="Assets/back.png" width="30px" />
+        <i class="bx bx-chevron-left" style="font-size: 4rem"></i>
         <h1 class="data-date">June 24, 2023</h1>
-        <img src="Assets/next.png" width="30px" />
+        <i class="bx bx-chevron-right" style="font-size: 4rem"></i>
         <button class="data-entry-btn">Save</button>
 
         <div class="nav-menu" id="nav-menu">
@@ -65,24 +65,77 @@
 
     <!--======= DATA ENTRY CONTENT =======-->
     <main class="content">
-      <h2 class="entry-title">Mood</h2>
-      <div class="entry-selection">
-        <p>Energized</p>
-        <p>Happy</p>
-        <p>Neutral</p>
-        <p>Sad</p>
-        <p>Stressed</p>
-        <p>Angry</p>
-      </div>
+      <h2 class="entry-title">Exercise</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th width="30%">Activity</th>
+            <th width="30%">Duration (min)</th>
+            <th width="30%">Calories</th>
+            <th width="10%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Biking</td>
+            <td>60</td>
+            <td>300</td>
+            <td>
+              <i
+                class="bx bxs-trash"
+                alt="Delete icon"
+                style="font-size: 1.75rem"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>Workout</td>
+            <td>30</td>
+            <td>164</td>
+            <td>
+              <i
+                class="bx bxs-trash"
+                alt="Delete icon"
+                style="font-size: 1.75rem"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="data-entry-btn add-button">Add</button>
       <hr class="divider" />
 
-      <h2 class="entry-title">Period Flow</h2>
-      <div class="entry-selection">
-        <p>Spotting</p>
-        <p>Light</p>
-        <p>Medium</p>
-        <p>Heavy</p>
-      </div>
+      <h2 class="entry-title">Food</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th width="50%">Food</th>
+            <th width="40%">Calories</th>
+            <th width="10%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apple</td>
+            <td>95</td>
+            <td>
+              <i
+                class="bx bxs-trash"
+                alt="Delete icon"
+                style="font-size: 1.75rem"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>Hamburger</td>
+            <td>354</td>
+            <td>
+              <i
+                class="bx bxs-trash"
+                alt="Delete icon"
+                style="font-size: 1.75rem"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="data-entry-btn add-button">Add</button>
       <hr class="divider" />
 
       <h2 class="entry-title">Weight</h2>
@@ -92,26 +145,54 @@
       </div>
       <hr class="divider" />
 
-      <h2 class="entry-title">Food</h2>
-      <table class="styled-table">
-        <thead>
-          <tr>
-            <th>Food</th>
-            <th>Calories</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Apple</td>
-            <td>95</td>
-          </tr>
-          <tr>
-            <td>Hamburger</td>
-            <td>354</td>
-          </tr>
-        </tbody>
-      </table>
-      <button class="data-entry-btn" id="add-button">Add</button>
+      <h2 class="entry-title">Mood</h2>
+      <div class="entry-selection">
+        <li class="emoji-group">
+          <i class="bx bx-happy-beaming" style="font-size: 3.5rem"></i>
+          <p>Energized</p>
+        </li>
+        <li class="emoji-group">
+          <i class="bx bx-smile" style="font-size: 3.5rem"></i>
+          <p>Happy</p>
+        </li>
+        <li class="emoji-group">
+          <i class="bx bx-meh" style="font-size: 3.5rem"></i>
+          <p>Neutral</p>
+        </li>
+        <li class="emoji-group">
+          <i class="bx bx-sad" style="font-size: 3.5rem"></i>
+          <p>Sad</p>
+        </li>
+        <li class="emoji-group">
+          <i class="bx bx-tired" style="font-size: 3.5rem"></i>
+          <p>Stressed</p>
+        </li>
+        <li class="emoji-group">
+          <i class="bx bx-angry" style="font-size: 3.5rem"></i>
+          <p>Angry</p>
+        </li>
+      </div>
+      <hr class="divider" />
+
+      <h2 class="entry-title">Period Flow</h2>
+      <div class="entry-selection">
+        <li class="emoji-group">
+          <i class="bx bx-loader-circle" style="font-size: 3.5rem"></i>
+          <p>Spotting</p>
+        </li>
+        <li class="emoji-group">
+          <i class="bx bx-droplet" style="font-size: 3.5rem"></i>
+          <p>Light</p>
+        </li>
+        <li class="emoji-group">
+          <i class="bx bxs-droplet-half" style="font-size: 3.5rem"></i>
+          <p>Medium</p>
+        </li>
+        <li class="emoji-group">
+          <i class="bx bxs-droplet" style="font-size: 3.5rem"></i>
+          <p>Heavy</p>
+        </li>
+      </div>
       <hr class="divider" />
 
       <h2 class="entry-title">Goals</h2>
