@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Health App</title>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="logSelection.html">
+          <button class="data-entry-btn">Cancel</button>
+        </a>
+        <i class="bx bx-chevron-left" style="font-size: 4rem"></i>
+        <h1 class="data-date">June 24, 2023</h1>
+        <i class="bx bx-chevron-right" style="font-size: 4rem"></i>
+        <a href="index.html">
+          <button class="data-entry-btn">Save</button>
+        </a>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="tips.html" class="nav-link">
+                <i class="bx bx-bulb nav-icon"></i>
+                <span class="nav-name">Tips</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="exercise.html" class="nav-link">
+                <i class="bx bx-run nav-icon"></i>
+                <span class="nav-name">Exercise</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active-link">
+                <i class="bx bx-calendar nav-icon"></i>
+                <span class="nav-name">Calendar</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="creature.html" class="nav-link">
+                <i class="bx bxs-dog nav-icon"></i>
+                <span class="nav-name">Creature</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="profile.html" class="nav-link">
+                <i class="bx bx-user-circle nav-icon"></i>
+                <span class="nav-name">Profile</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!--======= DATA ENTRY CONTENT =======-->
+    <main class="content">
+      <h2 class="entry-title">Log Weight</h2>
+      <div class="input-align">
+        <input class="input" type="number" />
+        <p>pounds</p>
+        <img
+          src="Assets/numpad.png"
+          alt="keyboard"
+          id="numpad"
+          class="keyboardImg" />
+      </div>
+    </main>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>

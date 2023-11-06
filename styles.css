@@ -306,6 +306,14 @@ img {
   line-height: 1.15;
 }
 
+.input-align:focus-within img {
+  display: inline-block;
+}
+
+.input-align img {
+  display: none;
+}
+
 .input-align {
   display: flex;
   flex-direction: row;
@@ -348,7 +356,7 @@ img {
 
 .notes-box {
   width: 600px;
-  height: 100px;
+  height: 250px;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 3rem;
@@ -356,6 +364,23 @@ img {
   background-color: #f5f5f5;
   padding: 10px;
   font-size: var(--normal-font-size);
+}
+
+.keyboardImg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 640px;
+  z-index: 101;
+}
+
+.entry-note:focus-within img {
+  display: inline-block;
+}
+
+.entry-note img {
+  display: none;
 }
 
 /*========= TABLE =========*/

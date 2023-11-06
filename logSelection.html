@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Health App</title>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="index.html">
+          <i
+            class="bx bx-arrow-back"
+            style="font-size: 4rem; color: var(--title-color)"></i>
+        </a>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="tips.html" class="nav-link">
+                <i class="bx bx-bulb nav-icon"></i>
+                <span class="nav-name">Tips</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="exercise.html" class="nav-link">
+                <i class="bx bx-run nav-icon"></i>
+                <span class="nav-name">Exercise</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active-link">
+                <i class="bx bx-calendar nav-icon"></i>
+                <span class="nav-name">Calendar</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="creature.html" class="nav-link">
+                <i class="bx bxs-dog nav-icon"></i>
+                <span class="nav-name">Creature</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="profile.html" class="nav-link">
+                <i class="bx bx-user-circle nav-icon"></i>
+                <span class="nav-name">Profile</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <img src="Assets/strawberries.png" alt="" class="nav-img" />
+      </nav>
+    </header>
+
+    <!--======= MANUAL LOG SELECTION =======-->
+    <main class="content">
+      <h1 class="section-title">Manually Log</h1>
+
+      <div class="tip-card-container">
+        <a href="exerciseEntry.html">
+          <div class="tip-card">Exercise</div>
+        </a>
+        <a href="foodEntry.html">
+          <div class="tip-card">Food</div>
+        </a>
+        <a href="weightEntry.html">
+          <div class="tip-card">Weight</div>
+        </a>
+        <a href="cycleDetailEntry.html">
+          <div class="tip-card">Cycle Details</div>
+        </a>
+        <a href="notesEntry.html">
+          <div class="tip-card">Notes</div>
+        </a>
+      </div>
+    </main>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>
