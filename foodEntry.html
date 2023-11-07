@@ -19,11 +19,11 @@
         <a href="logSelection.html">
           <button class="data-entry-btn">Cancel</button>
         </a>
-        <i class="bx bx-chevron-left" style="font-size: 4rem"></i>
-        <h1 class="data-date">June 24, 2023</h1>
-        <i class="bx bx-chevron-right" style="font-size: 4rem"></i>
-        <a href="index.html">
-          <button class="data-entry-btn">Save</button>
+        <img src="Assets/chevron-left-purple.png"></img>
+        <h1 class="data-date"> Nov 1, 2023</h1>
+        <img src="Assets/chevron-right-purple.png"></img>
+        <a href="logSelection.html">
+          <button class="data-entry-btn" id="food-save-btn">Save</button>
         </a>
 
         <div class="nav-menu" id="nav-menu">
@@ -70,7 +70,36 @@
     <!--======= DATA ENTRY CONTENT =======-->
     <main class="content">
       <h2 class="entry-title">Log Food</h2>
-      <table class="styled-table">
+      <div class="data-table-entry">
+        <div class="input-align">
+          <p style="padding-right: 26px">Food</p>
+          <input
+            class="input"
+            id="food-input"
+            type="text"
+            style="width: 200px" />
+          <img
+            src="Assets/keyboard.png"
+            alt="keyboard"
+            id="keyboard"
+            class="keyboardImg" />
+        </div>
+        <div class="input-align">
+          <p>Calories</p>
+          <input
+            class="input"
+            id="food-cal-input"
+            type="number"
+            style="width: 200px" />
+          <img
+            src="Assets/numpad.png"
+            alt="keyboard"
+            id="numpad"
+            class="keyboardImg" />
+        </div>
+      </div>
+      <button class="data-entry-btn add-button" id="add-food-btn">Add</button>
+      <table class="styled-table" id="food-table">
         <thead>
           <tr>
             <th width="50%">Food</th>
@@ -78,32 +107,102 @@
             <th width="10%"></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Apple</td>
-            <td>95</td>
-            <td>
-              <i
-                class="bx bxs-trash"
-                alt="Delete icon"
-                style="font-size: 1.75rem"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Hamburger</td>
-            <td>354</td>
-            <td>
-              <i
-                class="bx bxs-trash"
-                alt="Delete icon"
-                style="font-size: 1.75rem"></i>
-            </td>
-          </tr>
+        <tbody id="food-table-body">
         </tbody>
       </table>
-      <button class="data-entry-btn add-button">Add</button>
+      <div class="total-row">
+        <div class="input-align">
+          <p>Total Calories:</p>
+          <p id="display-total-food-cal"></p>
+        </div>
+      </div>
     </main>
 
-    <script src="index.js" defer></script>
+    <script>
+      const addButton = document.getElementById("add-food-btn");
+      const saveButton = document.getElementById("food-save-btn")
+      var foodEntries = [];
+      var totalCalories = 0;
+      var entryId = 0;
+
+      addButton.addEventListener("click", function () {
+        const foodInput = document.getElementById("food-input").value;
+        const calInput = document.getElementById("food-cal-input").value;
+        addRow(foodInput, calInput, true);
+      });
+
+      saveButton.addEventListener("click", function () {
+        localStorage.setItem("foodEntries", JSON.stringify(foodEntries));
+        localStorage.setItem("totalCalFood", totalCalories);
+      });
+
+      window.onbeforeunload = function () {
+        localStorage.setItem("foodEntries", JSON.stringify(foodEntries));
+        localStorage.setItem("totalCalFood", totalCalories);
+      };
+
+      window.onload = function() {
+        var storedfoodEntries = JSON.parse(localStorage.getItem("foodEntries"));
+        if (storedfoodEntries) {
+          storedfoodEntries.forEach(function(entry, index) {
+            addRow(entry.food, entry.calories, false)
+          });
+        }
+      };
+
+      function addRow(foodInput, calInput, newInput) {
+        // Add exercise entry to array for storage
+        var entry = {
+          id: entryId,
+          food: foodInput,
+          calories: calInput,
+        };
+        foodEntries.push(entry);
+
+        // Add to total counts
+        totalCalories += parseInt(calInput);
+
+        var table = document.getElementById("food-table-body");
+
+        // Create a new row and cells
+        var newRow = table.insertRow(-1);
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+
+        // Set cell values with inputs
+        cell1.textContent = foodInput;
+        cell2.textContent = calInput;
+
+        var image = document.createElement("img");
+        image.src = "Assets/trash-purple.png";
+        image.onclick = function() {
+            // Remove the row from the table
+            var row = image.parentNode.parentNode;
+            var table = row.parentNode;
+            table.removeChild(row);
+            totalCalories -= parseInt(calInput);
+            removeObjectById(entry.id);
+            document.getElementById("display-total-food-cal").textContent = totalCalories + " cal";
+        };
+        cell3.appendChild(image);
+
+        // Clear input fields after adding row
+        if (newInput) {
+          document.getElementById("food-input").value = "";
+          document.getElementById("food-cal-input").value = "";
+        }
+
+        entryId++;
+        document.getElementById("display-total-food-cal").textContent = totalCalories + " cal";
+      }
+
+      function removeObjectById(id) {
+        foodEntries = foodEntries.filter(function(obj) {
+          return obj.id !== id;
+        });
+      }
+      document.getElementById("display-total-food-cal").textContent = totalCalories + " cal";
+    </script>
   </body>
 </html>

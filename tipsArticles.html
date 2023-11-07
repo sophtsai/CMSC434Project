@@ -16,20 +16,12 @@
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="logSelection.html">
-          <button class="data-entry-btn">Cancel</button>
-        </a>
-        <img src="Assets/chevron-left-purple.png"></img>
-        <h1 class="data-date"> Nov 1, 2023</h1>
-        <img src="Assets/chevron-right-purple.png"></img>
-        <a href="logSelection.html">
-          <button class="data-entry-btn" id="weight-save">Save</button>
-        </a>
+        <a href="index.html" class="nav-logo">Health</a>
 
         <div class="nav-menu" id="nav-menu">
           <ul class="nav-list">
             <li class="nav-item">
-              <a href="tips.html" class="nav-link">
+              <a href="tips.html" class="nav-link active-link">
                 <i class="bx bx-bulb nav-icon"></i>
                 <span class="nav-name">Tips</span>
               </a>
@@ -43,7 +35,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="index.html" class="nav-link active-link">
+              <a href="index.html" class="nav-link">
                 <i class="bx bx-calendar nav-icon"></i>
                 <span class="nav-name">Calendar</span>
               </a>
@@ -64,46 +56,59 @@
             </li>
           </ul>
         </div>
+        <img src="Assets/strawberries.png" alt="" class="nav-img" />
       </nav>
     </header>
 
-    <!--======= DATA ENTRY CONTENT =======-->
+    <!--======= TIPS & RESOURCES MAIN PAGE =======-->
     <main class="content">
-      <h2 class="entry-title">Log Weight</h2>
-      <div class="input-align">
-        <input class="input" id="weight-input" type="number" />
-        <p>pounds</p>
-        <img
-          src="Assets/numpad.png"
-          alt="keyboard"
-          id="numpad"
-          class="keyboardImg" />
+      <h1 class="section-title">Exercise</h1>
+
+      <div class="article-card-container">
+        <div class="article-card">
+          <div class="article-img"></div>
+          <div class="article-title">
+            <h4>Article</h4>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-img"></div>
+          <div class="article-title">
+            <h4>Article</h4>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-img"></div>
+          <div class="article-title">
+            <h4>Article</h4>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-img"></div>
+          <div class="article-title">
+            <h4>Article</h4>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-img"></div>
+          <div class="article-title">
+            <h4>Article</h4>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-img"></div>
+          <div class="article-title">
+            <h4>Article</h4>
+          </div>
+        </div>
       </div>
     </main>
 
-    <script>
-      // Store weight input
-      const weightInput = document.getElementById("weight-input");
-      const weightSaveButton = document.getElementById("weight-save");
-
-      weightSaveButton.addEventListener("click", function () {
-        const weightValue = weightInput.value;
-
-        if (weightValue.trim() !== "") {
-          // Store the input data in localStorage
-          localStorage.setItem("storedWeight", weightValue);
-        } else {
-          // Handle empty input case
-        }
-      });
-
-      window.onbeforeunload = function () {
-        const weightValue = weightInput.value;
-
-        if (weightValue.trim() !== "") {
-          localStorage.setItem("storedWeight", weightValue);
-        }
-      };
-    </script>
+    <script src="index.js" defer></script>
   </body>
 </html>

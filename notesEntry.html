@@ -19,11 +19,11 @@
         <a href="logSelection.html">
           <button class="data-entry-btn">Cancel</button>
         </a>
-        <i class="bx bx-chevron-left" style="font-size: 4rem"></i>
-        <h1 class="data-date">June 24, 2023</h1>
-        <i class="bx bx-chevron-right" style="font-size: 4rem"></i>
-        <a href="index.html">
-          <button class="data-entry-btn">Save</button>
+        <img src="Assets/chevron-left-purple.png"></img>
+        <h1 class="data-date"> Nov 1, 2023</h1>
+        <img src="Assets/chevron-right-purple.png"></img>
+        <a href="logSelection.html">
+          <button class="data-entry-btn" id="notes-save">Save</button>
         </a>
 
         <div class="nav-menu" id="nav-menu">
@@ -71,7 +71,7 @@
     <main class="content">
       <h2 class="entry-title">Notes</h2>
       <div class="entry-note">
-        <textarea class="notes-box"></textarea>
+        <textarea class="notes-box" id="notes-input"></textarea>
         <img
           src="Assets/keyboard.png"
           alt="keyboard"
@@ -80,6 +80,29 @@
       </div>
     </main>
 
-    <script src="index.js" defer></script>
+    <script>
+      // Store weight input
+      const notesInput = document.getElementById("notes-input");
+      const notesSaveButton = document.getElementById("notes-save");
+
+      notesSaveButton.addEventListener("click", function () {
+        const notesValue = notesInput.value;
+
+        if (notesValue.trim() !== "") {
+          // Store the input data in localStorage
+          localStorage.setItem("storedNotes", notesValue);
+        } else {
+          // Handle empty input case
+        }
+      });
+
+      window.onbeforeunload = function () {
+        const notesValue = notesInput.value;
+
+        if (notesValue.trim() !== "") {
+          localStorage.setItem("storedWeight", notesValue);
+        }
+      };
+    </script>
   </body>
 </html>
