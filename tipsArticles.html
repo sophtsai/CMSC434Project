@@ -62,53 +62,134 @@
 
     <!--======= TIPS & RESOURCES MAIN PAGE =======-->
     <main class="content">
-      <h1 class="section-title">Exercise</h1>
-
-      <div class="article-card-container">
-        <div class="article-card">
-          <div class="article-img"></div>
-          <div class="article-title">
-            <h4>Article</h4>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="article-img"></div>
-          <div class="article-title">
-            <h4>Article</h4>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="article-img"></div>
-          <div class="article-title">
-            <h4>Article</h4>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="article-img"></div>
-          <div class="article-title">
-            <h4>Article</h4>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="article-img"></div>
-          <div class="article-title">
-            <h4>Article</h4>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="article-img"></div>
-          <div class="article-title">
-            <h4>Article</h4>
-          </div>
-        </div>
-      </div>
+      <h1 class="section-title" id="tips-section-title"></h1>
+      <div class="article-card-container" id="articles-container"></div>
     </main>
 
-    <script src="index.js" defer></script>
+    <script>
+      var articleTitles = [];
+
+      // Get URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      var sectionName = urlParams.get("section");
+      var age = 70;
+
+      if (sectionName == "exercise") {
+        if (age <= 18) {
+          articleTitles = [
+            "Active Games to Play with Family",
+            "Indoor Exercises",
+            "Exercises in Nature",
+            "Active Activities to Do",
+            "Ways to Enjoy Exercise",
+            "Jump Roping, Dancing, and Martial Arts",
+          ];
+        } else if (age > 18 && age < 65) {
+          articleTitles = [
+            "Ways to Work Out at Work",
+            "Exercise on Busy Days",
+            "Celebrate Your Sucesses",
+            "Places to Work Out",
+            "Exercise in Short Spurts",
+            "Turn Your Commute into a Workout",
+          ];
+        } else if (age >= 65) {
+          articleTitles = [
+            "Exercising Safely as an Older Adult",
+            "Places to Work Out",
+            "Simple Ways to Make Exercise Fun",
+            "Staying Motivated to Exercise",
+            "Fitness Tips for Older Adults",
+            "Reduce Injury Risk While Exercising",
+          ];
+        }
+      } else if (sectionName == "sleep") {
+        if (age <= 18) {
+          articleTitles = [
+            "Building a Consistent Sleep Schedule",
+            "Creating a Bedtime Routine",
+            "Evening Activities to Get a Good Night Sleep",
+            "Get the Best out of Naps",
+            "Back-to-School Sleep Tips",
+            "Healthy Sleep Habits",
+          ];
+        } else if (age > 18 && age < 65) {
+          articleTitles = [
+            "Building a Consistent Sleep Schedule",
+            "Creating a Comfortable Sleeping Environment",
+            "Evening Activities to Get a Good Night Sleep",
+            "Avoiding Caffeine and Alcohol Before Bedtime",
+            "Sleep Tips for Night Shift Workers",
+            "Organize Home and Work Life to Support Your Sleep",
+          ];
+        } else if (age >= 65) {
+          articleTitles = [
+            "Building a Consistent Sleep Schedule",
+            "Creating a Comfortable Sleeping Environment",
+            "Natural Remedies for Better Sleep",
+            "Avoiding Caffeine and Alcohol Before Bedtime",
+            "Strategies for Improving Sleep in Older Adults",
+            "Methods to Relax Before Sleep",
+          ];
+        }
+      } else if (sectionName == "food") {
+        if (age <= 18) {
+          articleTitles = [
+            "Maintaining a Regular Eating Schedule",
+            "Making Nutrition Easier",
+            "Focusing on Overall Diet",
+            "Healthy Food for Kids and Teens",
+            "Choosing Fruits and Vegetables",
+            "Developing Healthy Eating Habits",
+          ];
+        } else if (age > 18 && age < 65) {
+          articleTitles = [
+            "Maintaining a Regular Eating Schedule",
+            "Making Nutrition Easier",
+            "Packing Healthy Meals and Snacks",
+            "Ways to Eat Healthy While Working From Home",
+            "Healthy Diet with a Busy Lifestyle",
+            "Preparing Meals Ahead of Time",
+          ];
+        } else if (age >= 65) {
+          articleTitles = [
+            "Maintaining a Regular Eating Schedule",
+            "Making Nutrition Easier",
+            "Avoiding Added Sugar, Saturated Fats, & Sodium",
+            "Eating Protein to Maintain Muscle Mass",
+            "Healthy Eating Tips for Older Adults",
+            "Choosing Nutrient-Dense Foods",
+          ];
+        }
+      }
+
+      var sectionTitle = document.getElementById("tips-section-title");
+      sectionTitle.textContent =
+        "Articles on " +
+        sectionName.charAt(0).toUpperCase() +
+        sectionName.slice(1);
+
+      articleTitles.forEach(function (articleTitle) {
+        // Create a new article card div
+        var articleCard = document.createElement("div");
+        articleCard.className = "article-card";
+
+        // Create article title div and h4 element
+        var articleTitleDiv = document.createElement("div");
+        articleTitleDiv.className = "article-title";
+        var h4 = document.createElement("h4");
+        h4.textContent = articleTitle;
+        articleTitleDiv.appendChild(h4);
+
+        // Append elements to article card
+        articleCard.appendChild(document.createElement("div")).className =
+          "article-img";
+        articleCard.appendChild(articleTitleDiv);
+
+        // Append article card to the container
+        var articleContainer = document.getElementById("articles-container");
+        articleContainer.appendChild(articleCard);
+      });
+    </script>
   </body>
 </html>

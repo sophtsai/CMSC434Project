@@ -65,16 +65,17 @@
       <h1 class="section-title">Tips & Resources</h1>
 
       <div class="tip-card-container">
-        <a href="tipsArticles.html">
-          <div class="tip-card">Exercise</div>
-        </a>
-        <div class="tip-card">Sleep</div>
-        <div class="tip-card">Food</div>
-        <div class="tip-card">Stress</div>
-        <div class="tip-card">Mental Health</div>
+        <div class="tip-card" onClick="addParameter('exercise')">Exercise</div>
+        <div class="tip-card" onClick="addParameter('sleep')">Sleep</div>
+        <div class="tip-card" onClick="addParameter('food')">Food</div>
       </div>
     </main>
 
-    <script src="index.js" defer></script>
+    <script>
+      function addParameter(sectionName) {
+        window.location.href =
+          "tipsArticles.html?section=" + encodeURIComponent(sectionName);
+      }
+    </script>
   </body>
 </html>
