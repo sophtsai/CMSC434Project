@@ -91,16 +91,19 @@
           // Store the input data in localStorage
           localStorage.setItem("storedWeight", weightValue);
         } else {
-          // Handle empty input case
+          localStorage.setItem("storedWeight", 0);
         }
       });
 
       window.onbeforeunload = function () {
         const weightValue = weightInput.value;
-
+        
         if (weightValue.trim() !== "") {
           localStorage.setItem("storedWeight", weightValue);
+        } else {
+          localStorage.setItem("storedWeight", 0);
         }
+
       };
     </script>
   </body>
