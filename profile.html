@@ -58,35 +58,32 @@
 
     <!--=============== ADD YOUR CODE BELOW HERE ===============-->
     <main class="content">
-      <h1 style="position: relative; left: 240px; padding: 20px">Profile</h1>
-      <img
-        src="Assets/strawberries.png"
-        alt=""
-        class="nav-img"
-        style="
-          width: 200px;
-          height: 200px;
-          position: absolute;
-          left: 220px;
-          padding: 10px;
-        " />
-      <h1 style="position: relative; top: 250px; left: 13rem; font-size: 2rem">
-        Straw B. Berry
-      </h1>
-      <p style="position: relative; top: 300px; left: 15rem; padding: 10px">
-        Sex: Female
-      </p>
-      <p style="position: relative; top: 300px; left: 15rem; padding: 10px">
-        Age: 20
-      </p>
-      <button
-        class="data-entry-btn add-button"
-        onclick="window.location.href = 'editProfile.html';"
-        style="position: relative; top: 350px; left: 220px">
-        Edit Profile
-      </button>
+      <h1 style="position: relative; left: 13.5rem; padding: 20px">Profile</h1>
+      <img src="Assets/strawberries.png" alt="" class="nav-img" style="width: 200px; height: 200px; position: absolute; left: 12.5rem; padding: 10px"/>
+      <div id="display-name" style="width: 640px; position: relative; top: 250px; text-align: center; font-size: 2rem"></div>
+      <div id="display-sex" style="position: relative; top: 300px; left: 15rem; padding: 10px"></div>
+      <div id="display-age" style="position: relative; top: 300px; left: 15rem; padding: 10px"></div>
+      <button class="data-entry-btn add-button" onclick="window.location.href = 'editProfile.html';" style="position: relative; top: 350px; left: 220px">Edit Profile</button>
     </main>
 
-    <script src="index.js" defer></script>
+    <script>
+      window.onload = function() {
+        var profileName = localStorage.getItem("profileName");
+        if (profileName == null) {
+          profileName = "Straw B. Berry";
+        }
+        var profileSex = localStorage.getItem("profileSex");
+        if (profileSex == null) {
+          profileSex = "Female";
+        }
+        var profileAge = localStorage.getItem("profileAge");
+        if (profileAge == null) {
+          profileAge = 20;
+        }
+        document.getElementById("display-name").textContent = profileName;
+        document.getElementById("display-sex").textContent = "Sex: " + profileSex;
+        document.getElementById("display-age").textContent = "Age: " + profileAge;
+      };
+    </script>
   </body>
 </html>
