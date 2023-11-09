@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Health App</title>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav-logo">Health</a>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="tips.html" class="nav-link">
+                <i class="bx bx-bulb nav-icon"></i>
+                <span class="nav-name">Tips</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="exercise.html" class="nav-link">
+                <i class="bx bx-run nav-icon"></i>
+                <span class="nav-name">Exercise</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <i class="bx bx-calendar nav-icon"></i>
+                <span class="nav-name">Calendar</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="creature.html" class="nav-link">
+                <i class="bx bxs-dog nav-icon"></i>
+                <span class="nav-name">Creature</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="profile.html" class="nav-link active-link">
+                <i class="bx bx-user-circle nav-icon"></i>
+                <span class="nav-name">Profile</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <img src="Assets/strawberries.png" alt="" class="nav-img" />
+      </nav>
+    </header>
+
+    <!--=============== ADD YOUR CODE BELOW HERE ===============-->
+    <main class="content">
+      <h1 style="position: relative; left: 13rem; padding: 20px">Edit Profile</h1>
+      <form style="width: 30rem; position: absolute; left: 5rem">
+        <fieldset>
+          <div class="grid-35">
+            <label for="avatar">Your Photo</label>
+          </div>
+          <div class="grid-65">
+            <span class="photo" title="Edit or upload you photo.">
+              <img src="Assets/strawberries.png" alt="" class="nav-img" />
+            </span>
+            <input type="file" class="btn" />
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="grid-35">
+            <label for="fname">Name</label>
+          </div>
+          <div class="grid-65">
+            <input type="text" id="fname" tabindex="1" />
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="grid-35">
+            <label for="fname">Age</label>
+          </div>
+          <div class="grid-65">
+            <input type="number" id="fname" tabindex="1" />
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>
