@@ -176,59 +176,104 @@ img {
 }
 
 /*=============== CALENDAR ===============*/
+
+.week {
+  left: 3.2rem; 
+  top: 137px; 
+  position: absolute; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 18px; 
+  display: inline-flex
+}
+
+.day-selected {
+  padding-left: 18px; 
+  padding-right: 18px; 
+  padding-top: 13px; 
+  padding-bottom: 13px; 
+  background: #694384; 
+  border-radius: 28.50px; 
+  overflow: hidden; 
+  border: 2px #694384 solid; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px; 
+  display: inline-flex;
+  color: white; 
+  font-size: 20px; 
+  font-weight: 400; 
+  word-wrap: break-word
+}
+
+.day {
+  padding-left: 18px; 
+  padding-right: 18px; 
+  padding-top: 13px; 
+  padding-bottom: 13px; 
+  background: white; 
+  border-radius: 28.50px; 
+  overflow: hidden; 
+  border: 2px #694384 solid; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px; 
+  display: inline-flex;
+  color: #694384; 
+  font-size: 20px; 
+  font-weight: 400; 
+  word-wrap: break-word
+}
+
+.day-name {
+  top: 99px; 
+  position: absolute; 
+  color: var(--title-color); 
+  font-size: 20px; 
+  font-weight: 400; 
+  word-wrap: break-word;
+}
+
 .month {
-  padding: 4rem;
-  width: 100%;
-  background: var(--body-color);
-  text-align: center;
+  left: 150px; 
+  top: 10px; 
+  position: absolute; 
+  color: var(--text-color); 
+  font-size: 64px; 
+  font-weight: 600; 
+  word-wrap: break-word
 }
 
-.month ul {
-  margin: 0;
-  padding: 0;
+.date {
+  left: 162px; 
+  top: 223px; 
+  position: absolute; 
+  color: var(--title-color); 
+  font-size: 24px; 
+  font-style: italic; 
+  font-weight: 400; 
+  word-wrap: break-word
 }
 
-.month ul li {
-  color: var(--text-color);
-  font-size: 4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
+.data {
+  left: 30px; 
+  top: 280px; 
+  width: 575px; 
+  height: 490px; 
+  position: relative; 
+  border-radius: 28.50px; 
+  background: var(--container-color)
 }
 
-.weekdays {
-  margin: 0;
-  padding: 2rem 1rem;
-  background-color: var(--container-color);
-}
-
-.weekdays li {
-  display: inline-block;
-  width: 13.6%;
-  color: var(--title-color);
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-.days {
-  padding: 1rem 0;
-  background: white;
-  margin: 0;
-}
-
-.days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 2.5rem;
-  color: var(--title-color);
-}
-
-.days li .active {
-  padding: 1rem;
-  background: var(--body-color);
-  color: white !important;
+.data-name {
+  left: 40px; 
+  position: absolute; 
+  color: var(--text-color); 
+  font-size: 25px; 
+  font-weight: 600; 
+  word-wrap: break-word;
 }
 
 .link {
@@ -240,25 +285,47 @@ img {
   z-index: 1;
 }
 
-@media screen and (max-width: 720px) {
-  .weekdays li,
-  .days li {
-    width: 13.1%;
-  }
+/*=============== FORM ===============*/
+
+fieldset textarea,input{
+  background-color: #f7f7f7;
+  box-shadow: 0 0 0 1px var(--body-color);
+  padding: 0.5rem;
+  width: 95%;
+  margin: 0.6rem auto;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: 0;
+  transition: 0.3s ease;
 }
 
-@media screen and (max-width: 420px) {
-  .weekdays li,
-  .days li {
-    width: 12.5%;
-  }
+fieldset textarea{
+  min-height: 40px;
+  max-height: 60px;
 }
 
-@media screen and (max-width: 290px) {
-  .weekdays li,
-  .days li {
-    width: 12.2%;
-  }
+fieldset textarea:hover,input:hover{
+  box-shadow: 0 0 0 1px var(--text-color);
+  background-color: #fff;
+}
+
+fieldset textarea:focus,input:focus{
+  box-shadow: 0 0 0 1px var(--text-color),
+              inset 0 2px 5px -1px rgba(0,0,0,0.25);
+}
+
+.grid-35{
+  width: 35%;
+  float: left;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.grid-65{
+  position: relative;
+  width: 65%;
+  float: right;
+  font-weight: 300;
 }
 
 /*========= DATA ENTRY =========*/
