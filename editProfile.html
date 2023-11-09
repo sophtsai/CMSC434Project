@@ -58,40 +58,58 @@
 
     <!--=============== ADD YOUR CODE BELOW HERE ===============-->
     <main class="content">
-      <h1 style="position: relative; left: 13rem; padding: 20px">
-        Edit Profile
-      </h1>
-      <form style="width: 30rem; position: absolute; left: 5rem">
+      <h1 style="position: relative; left: 11.5rem; padding: 20px">Edit Profile</h1>
+      <form action="Profile.html" style="width: 30rem; position: absolute; left: 5rem">
         <fieldset>
-          <div class="grid-35">
-            <label for="avatar">Your Photo</label>
+          <div class="left-field">
+            <label for="name-input">Name</label>
           </div>
-          <div class="grid-65">
-            <span class="photo" title="Edit or upload you photo.">
-              <img src="Assets/strawberries.png" alt="" class="nav-img" />
-            </span>
-            <input type="file" class="btn" />
+          <div class="right-field">
+            <input type="text" id="name-input" tabindex="1"/>
+            <img src="Assets/keyboard.png" alt="keyboard" id="keyboard" class="keyboardImg" />
           </div>
         </fieldset>
         <fieldset>
-          <div class="grid-35">
-            <label for="fname">Name</label>
+          <div class="left-field">
+            <label for="sex-input">Sex</label>
           </div>
-          <div class="grid-65">
-            <input type="text" id="fname" tabindex="1" />
+          <div class="right-field">
+            <select id="sex-input" style="width: 100px" required>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
           </div>
         </fieldset>
         <fieldset>
-          <div class="grid-35">
-            <label for="fname">Age</label>
+          <div class="left-field">
+            <label for="age-input">Age</label>
           </div>
-          <div class="grid-65">
-            <input type="number" id="fname" tabindex="1" />
-          </div>
+          <div class="right-field">
+            <input type="number" id="age-input" tabindex="1"/>
+            <img src="Assets/numpad.png" alt="keyboard" id="numpad" class="keyboardImg" />
+            </div>
         </fieldset>
+        <button class="data-entry-btn add-button" onclick="window.location.href = 'Profile.html';" style="width: 40%; float: left">Cancel</button>
+        <button class="data-entry-btn add-button" id="save-profile" type="submit" style="width: 40%; float: left">Save Changes</button>
       </form>
     </main>
 
-    <script src="index.js" defer></script>
+    <script>
+      var saveProfileButton = document.getElementById("save-profile");
+      saveProfileButton.addEventListener("click", function () {
+        var nameInput = document.getElementById("name-input").value;
+        var sexInput = document.getElementById("sex-input").value;
+        var ageInput = document.getElementById("age-input").value;
+        if (nameInput.trim() !== "") {
+          localStorage.setItem("profileName", nameInput);
+        }
+        if (sexInput.trim() !== "") {
+          localStorage.setItem("profileSex", sexInput);
+        }
+        if (ageInput.trim() !== "") {
+          localStorage.setItem("profileAge", ageInput);
+        }
+      });
+    </script>
   </body>
 </html>
