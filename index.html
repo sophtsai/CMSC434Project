@@ -59,15 +59,7 @@
     <!--=============== CALENDAR ===============-->
     <main class="content">
       <div class="Frame1">
-        <img
-          src="Assets/back.png"
-          style="
-            width: 2rem;
-            height: 2rem;
-            position: absolute;
-            top: 7rem;
-            left: 1rem;
-          " />
+        <img src="Assets/chevron-left-purple.png" style="width: 3rem; height: 3rem; position: absolute; top: 6rem; left: 1rem"></i>
         <div class="week">
           <div class="day-selected">
             <div>01</div>
@@ -91,15 +83,7 @@
             <div>07</div>
           </div>
         </div>
-        <img
-          src="Assets/next.png"
-          style="
-            width: 2rem;
-            height: 2rem;
-            position: absolute;
-            top: 7rem;
-            left: 38rem;
-          " />
+        <img src="Assets/chevron-right-purple.png" style="width: 3rem; height: 3rem; position: absolute; top: 6rem; left: 37rem"></i>
         <div class="day-name" style="left: 10.5%">SUN</div>
         <div class="day-name" style="left: 23%">MON</div>
         <div class="day-name" style="left: 36%">TUE</div>
@@ -108,71 +92,96 @@
         <div class="day-name" style="left: 48.5%">WED</div>
         <div class="day-name" style="left: 61.5%">THU</div>
         <div class="day-name" style="left: 75%">FRI</div>
-        <div class="day-name" style="left: 87.5%">SAT</div>
+        <div class="day-name" style="left: 86.5%">SAT</div>
       </div>
       <div class="data">
         <div class="exercise">
-          <div class="data-name" style="top: 50px">Exercise:</div>
+          <div class="data-name" style="top: 3rem">Exercise:</div>
+          <div id="exercise-icon" style="width: 30px; height: 30px; left: 9.5rem; top: 3rem; position: absolute; float: right"></div>
+          <div id="display-total-dur" style="position: absolute; top: 5.5rem; left: 5rem"></div>
+          <div id="display-total-cal" style="position: absolute; top: 7rem; left: 5rem"></div>
         </div>
         <div class="food">
-          <div class="data-name" style="top: 150px">Food:</div>
+          <div class="data-name" style="top: 9.5rem">Food:</div>
+          <div id="food-icon" style="width: 30px; height: 30px; left: 7.1rem; top: 9.5rem; position: absolute; float: right"></div>
+          <div id="display-total-food-cal" style="position: absolute; top: 12rem; left: 5rem"></div>
         </div>
         <div class="weight">
-          <div class="data-name" style="top: 250px">Weight:</div>
+          <div class="data-name" style="top: 15.5rem">Weight:</div>
+          <div id="weight-icon" style="width: 30px; height: 30px; left: 8.5rem; top: 15.5rem; position: absolute; float: right"></div>
+          <div id="display-weight" style="position: absolute; top: 18rem; left: 5rem"></div>
         </div>
-        <div class="cycle">
-          <div class="data-name" style="top: 350px">Notes:</div>
+        <div class="notes">
+          <div class="data-name" style="top: 21.5rem">Notes:</div>
+          <div id="notes-icon" style="width: 30px; height: 30px; left: 7.8rem; top: 21.5rem; position: absolute; float: right"></div>
+          <div id="display-notes" style="position: absolute; top: 24rem; left: 5rem"></div>
         </div>
         <a href="logSelection.html">
-          <div
-            class="Add"
-            style="
-              width: 118px;
-              height: 118px;
-              left: 465px;
-              top: 385px;
-              position: absolute;
-            ">
-            <div
-              class="Rectangle1"
-              style="
-                width: 118px;
-                height: 118px;
-                left: 0px;
-                top: 0px;
-                position: absolute;
-                background: #933150;
-                border-radius: 122px;
-              "></div>
-            <div
-              class="Rectangle2"
-              style="
-                width: 10px;
-                height: 54px;
-                left: 54px;
-                top: 32px;
-                position: absolute;
-                background: #fddbee;
-                border-radius: 5px;
-              "></div>
-            <div
-              class="Rectangle3"
-              style="
-                width: 10px;
-                height: 54px;
-                left: 32px;
-                top: 64px;
-                position: absolute;
-                transform: rotate(-90deg);
-                transform-origin: 0 0;
-                background: #fddbee;
-                border-radius: 5px;
-              "></div>
+          <div class="Add" style="width: 118px; height: 118px; left: 465px; top: 385px; position: absolute">
+            <div class="Rectangle1" style="width: 118px; height: 118px; left: 0px; top: 0px; position: absolute; background: #933150; border-radius: 122px"></div>
+            <div class="Rectangle2" style="width: 10px; height: 54px; left: 54px; top: 32px; position: absolute; background: #FDDBEE; border-radius: 5px"></div>
+            <div class="Rectangle3" style="width: 10px; height: 54px; left: 32px; top: 64px; position: absolute; transform: rotate(-90deg); transform-origin: 0 0; background: #FDDBEE; border-radius: 5px"></div>
           </div>
         </a>
-      </div>
     </main>
 
-    <script src="index.js" defer></script>
+    <script>
+      // EXERCISE
+      var totalDurExercise = localStorage.getItem("totalDurExercise");
+      var totalCalExercise = localStorage.getItem("totalCalExercise");
+      if (totalDurExercise != null && totalDurExercise != 0) {
+        document.getElementById("display-total-dur").textContent = "Total Exercise Duration: " + totalDurExercise + " min";
+      } else {
+        document.getElementById("display-total-dur").textContent = "No log";
+      }
+      if (totalCalExercise != null && totalCalExercise != 0) {
+        document.getElementById("display-total-cal").textContent = "Total Calories Burned: " + totalCalExercise + " cal";
+      } else {
+        document.getElementById("display-total-cal").textContent = "No log";
+      }
+
+      // FOOD
+      var totalCalFood = localStorage.getItem("totalCalFood");
+      if (totalCalFood != null && totalCalFood != 0) {
+        document.getElementById("display-total-food-cal").textContent = "Total Calories Eaten: " + totalCalFood + " cal";
+      } else {
+        document.getElementById("display-total-food-cal").textContent = "No log";
+      }
+
+      // WEIGHT
+      var storedWeight = localStorage.getItem("storedWeight");
+      if (storedWeight != null && storedWeight != 0) {
+        document.getElementById("display-weight").textContent = "Weight: " + storedWeight + " lbs";
+      } else {
+        document.getElementById("display-weight").textContent = "No log";
+      }
+
+      // NOTES
+      var storedNotes = localStorage.getItem("storedNotes");
+      if (storedNotes != null && storedNotes != "") {
+        document.getElementById("display-notes").textContent = storedNotes;
+      } else {
+        document.getElementById("display-notes").textContent = "No log";
+      }
+
+      // ICON
+      var img = '<img src="Assets/circle.png">';
+      var exerciseIcon = document.getElementById("exercise-icon");
+      var foodIcon = document.getElementById("food-icon");
+      var weightIcon = document.getElementById("weight-icon");
+      var notesIcon = document.getElementById("notes-icon");
+      if (totalDurExercise != 0 && totalCalExercise != 0) {
+        exerciseIcon.innerHTML = img;
+      }
+      if (totalCalFood != 0) {
+        foodIcon.innerHTML = img;
+      }
+      if (storedWeight != 0) {
+        weightIcon.innerHTML = img;
+      }
+      if (storedNotes != "") {
+        notesIcon.innerHTML = img;
+      }
+    </script>
   </body>
 </html>
