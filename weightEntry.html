@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-
     <link rel="stylesheet" href="styles.css" />
 
     <title>Health App</title>
@@ -19,9 +15,9 @@
         <a href="logSelection.html">
           <button class="data-entry-btn">Cancel</button>
         </a>
-        <img src="Assets/chevron-left-purple.png"></img>
-        <h1 class="data-date"> Nov 1, 2023</h1>
-        <img src="Assets/chevron-right-purple.png"></img>
+        <img src="Assets/chevron-left-purple.png" />
+        <h1 class="data-date">Nov 1, 2023</h1>
+        <img src="Assets/chevron-right-purple.png" />
         <a href="logSelection.html">
           <button class="data-entry-btn" id="weight-save">Save</button>
         </a>
@@ -30,35 +26,35 @@
           <ul class="nav-list">
             <li class="nav-item">
               <a href="tips.html" class="nav-link">
-                <i class="bx bx-bulb nav-icon"></i>
+                <img src="Assets/tips-pink.png" />
                 <span class="nav-name">Tips</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="exercise.html" class="nav-link">
-                <i class="bx bx-run nav-icon"></i>
+                <img src="Assets/exercise-pink.png" />
                 <span class="nav-name">Exercise</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="index.html" class="nav-link active-link">
-                <i class="bx bx-calendar nav-icon"></i>
+                <img src="Assets/calendar-pink.png" />
                 <span class="nav-name">Calendar</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="creature.html" class="nav-link">
-                <i class="bx bxs-dog nav-icon"></i>
-                <span class="nav-name">Creature</span>
+              <a href="goals.html" class="nav-link">
+                <img src="Assets/goals-pink.png" />
+                <span class="nav-name">Goals</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="profile.html" class="nav-link">
-                <i class="bx bx-user-circle nav-icon"></i>
+                <img src="Assets/profile-pink.png" />
                 <span class="nav-name">Profile</span>
               </a>
             </li>
@@ -71,8 +67,10 @@
     <main class="content">
       <h2 class="entry-title">Log Weight</h2>
       <div class="input-align">
-        <input class="input" id="weight-input" type="number" />
-        <p>pounds</p>
+        <div id="weight-container">
+          <input class="input" id="weight-input" type="number" />
+          <p>pounds</p>
+        </div>
         <img
           src="Assets/numpad.png"
           alt="keyboard"

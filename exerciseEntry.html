@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-
     <link rel="stylesheet" href="styles.css" />
 
     <title>Health App</title>
@@ -19,9 +15,9 @@
         <a href="logSelection.html">
           <button class="data-entry-btn">Cancel</button>
         </a>
-        <img src="Assets/chevron-left-purple.png"></img>
-        <h1 class="data-date"> Nov 1, 2023</h1>
-        <img src="Assets/chevron-right-purple.png"></img>
+        <img src="Assets/chevron-left-purple.png" />
+        <h1 class="data-date">Nov 1, 2023</h1>
+        <img src="Assets/chevron-right-purple.png" />
         <a href="logSelection.html">
           <button class="data-entry-btn" id="exercise-save-btn">Save</button>
         </a>
@@ -30,35 +26,35 @@
           <ul class="nav-list">
             <li class="nav-item">
               <a href="tips.html" class="nav-link">
-                <i class="bx bx-bulb nav-icon"></i>
+                <img src="Assets/tips-pink.png" />
                 <span class="nav-name">Tips</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="exercise.html" class="nav-link">
-                <i class="bx bx-run nav-icon"></i>
+                <img src="Assets/exercise-pink.png" />
                 <span class="nav-name">Exercise</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="index.html" class="nav-link active-link">
-                <i class="bx bx-calendar nav-icon"></i>
+                <img src="Assets/calendar-pink.png" />
                 <span class="nav-name">Calendar</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="creature.html" class="nav-link">
-                <i class="bx bxs-dog nav-icon"></i>
-                <span class="nav-name">Creature</span>
+              <a href="goals.html" class="nav-link">
+                <img src="Assets/goals-pink.png" />
+                <span class="nav-name">Goals</span>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="profile.html" class="nav-link">
-                <i class="bx bx-user-circle nav-icon"></i>
+                <img src="Assets/profile-pink.png" />
                 <span class="nav-name">Profile</span>
               </a>
             </li>
@@ -111,7 +107,9 @@
             class="keyboardImg" />
         </div>
       </div>
-      <button class="data-entry-btn add-button" id="add-exercise-btn">Add</button>
+      <button class="data-entry-btn add-button" id="add-exercise-btn">
+        Add
+      </button>
       <table class="styled-table" id="exercise-table">
         <thead>
           <tr>
@@ -121,8 +119,7 @@
             <th width="10%"></th>
           </tr>
         </thead>
-        <tbody id="exercise-table-body">
-        </tbody>
+        <tbody id="exercise-table-body"></tbody>
       </table>
       <div class="total-row">
         <div class="input-align">
@@ -138,7 +135,7 @@
 
     <script>
       const addButton = document.getElementById("add-exercise-btn");
-      const saveButton = document.getElementById("exercise-save-btn")
+      const saveButton = document.getElementById("exercise-save-btn");
       var exerciseEntries = [];
       var totalDuration = 0;
       var totalCalories = 0;
@@ -152,22 +149,30 @@
       });
 
       saveButton.addEventListener("click", function () {
-        localStorage.setItem("exerciseEntries", JSON.stringify(exerciseEntries));
+        localStorage.setItem(
+          "exerciseEntries",
+          JSON.stringify(exerciseEntries)
+        );
         localStorage.setItem("totalDurExercise", totalDuration);
         localStorage.setItem("totalCalExercise", totalCalories);
       });
 
       window.onbeforeunload = function () {
-        localStorage.setItem("exerciseEntries", JSON.stringify(exerciseEntries));
+        localStorage.setItem(
+          "exerciseEntries",
+          JSON.stringify(exerciseEntries)
+        );
         localStorage.setItem("totalDurExercise", totalDuration);
         localStorage.setItem("totalCalExercise", totalCalories);
       };
 
-      window.onload = function() {
-        var storedExerciseEntries = JSON.parse(localStorage.getItem("exerciseEntries"));
+      window.onload = function () {
+        var storedExerciseEntries = JSON.parse(
+          localStorage.getItem("exerciseEntries")
+        );
         if (storedExerciseEntries) {
-          storedExerciseEntries.forEach(function(entry, index) {
-            addRow(entry.activity, entry.duration, entry.calories, false)
+          storedExerciseEntries.forEach(function (entry, index) {
+            addRow(entry.activity, entry.duration, entry.calories, false);
           });
         }
       };
@@ -202,16 +207,18 @@
 
         var image = document.createElement("img");
         image.src = "Assets/trash-purple.png";
-        image.onclick = function() {
-            // Remove the row from the table
-            var row = image.parentNode.parentNode;
-            var table = row.parentNode;
-            table.removeChild(row);
-            totalCalories -= parseInt(calInput);
-            totalDuration -= parseInt(durationInput);
-            removeObjectById(entry.id);
-            document.getElementById("display-total-dur").textContent = totalDuration + " min";
-            document.getElementById("display-total-exercise-cal").textContent = totalCalories + " cal";
+        image.onclick = function () {
+          // Remove the row from the table
+          var row = image.parentNode.parentNode;
+          var table = row.parentNode;
+          table.removeChild(row);
+          totalCalories -= parseInt(calInput);
+          totalDuration -= parseInt(durationInput);
+          removeObjectById(entry.id);
+          document.getElementById("display-total-dur").textContent =
+            totalDuration + " min";
+          document.getElementById("display-total-exercise-cal").textContent =
+            totalCalories + " cal";
         };
         cell4.appendChild(image);
 
@@ -223,17 +230,21 @@
         }
 
         entryId++;
-        document.getElementById("display-total-dur").textContent = totalDuration + " min";
-        document.getElementById("display-total-exercise-cal").textContent = totalCalories + " cal";
+        document.getElementById("display-total-dur").textContent =
+          totalDuration + " min";
+        document.getElementById("display-total-exercise-cal").textContent =
+          totalCalories + " cal";
       }
 
       function removeObjectById(id) {
-        exerciseEntries = exerciseEntries.filter(function(obj) {
+        exerciseEntries = exerciseEntries.filter(function (obj) {
           return obj.id !== id;
         });
       }
-      document.getElementById("display-total-dur").textContent = totalDuration + " min";
-      document.getElementById("display-total-exercise-cal").textContent = totalCalories + " cal";
+      document.getElementById("display-total-dur").textContent =
+        totalDuration + " min";
+      document.getElementById("display-total-exercise-cal").textContent =
+        totalCalories + " cal";
     </script>
   </body>
 </html>
