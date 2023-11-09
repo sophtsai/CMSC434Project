@@ -88,7 +88,7 @@
           // Store the input data in localStorage
           localStorage.setItem("storedNotes", notesValue);
         } else {
-          // Handle empty input case
+          localStorage.setItem("storedNotes", "");
         }
       });
 
@@ -97,6 +97,8 @@
 
         if (notesValue.trim() !== "") {
           localStorage.setItem("storedNotes", notesValue);
+        } else {
+          localStorage.setItem("storedNotes", "");
         }
       };
     </script>
