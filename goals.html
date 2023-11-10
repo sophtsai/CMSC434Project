@@ -38,14 +38,14 @@
             </li>
 
             <li class="nav-item">
-              <a href="goals.html" class="nav-link">
+              <a href="goals.html" class="nav-link active-link">
                 <img src="Assets/goals-pink.png" />
                 <span class="nav-name">Goals</span>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="profile.html" class="nav-link active-link">
+              <a href="profile.html" class="nav-link">
                 <img src="Assets/profile-pink.png" />
                 <span class="nav-name">Profile</span>
               </a>
@@ -58,31 +58,27 @@
 
     <!--=============== ADD YOUR CODE BELOW HERE ===============-->
     <main class="content">
-      <h1>Goals</h1>
-      
-      
+      <h1 class="section-title">Goals</h1>
+
       <h2>Complete ours...</h2>
       <div class="wrapper">
-        <div class = "static-goals">
+        <div class="static-goals">
           <h3>Log 5 days in a row</h3>
           <div class="progress-bar">
-            <span class="progress-bar-fill" style="width: 70%;"></span>
+            <span class="progress-bar-fill" style="width: 70%"></span>
           </div>
 
-          <br>
-          <br>
-          <br>
+          <br />
+          <br />
 
           <h3>Complete 10 hours of exercise</h3>
           <div class="progress-bar">
-            <span class="progress-bar-fill" style="width: 70%;"></span>
+            <span class="progress-bar-fill" style="width: 70%"></span>
           </div>
         </div>
-        <br>
-        <br>
+        <br />
         <h2>...or your own!</h2>
-        <br>
-        <div class = "list-all">
+        <div class="list-all">
           <h3>To-Do List</h3>
           <ul id="listUL">
             <li class="checked list-item">hello</li>
@@ -90,15 +86,13 @@
         </div>
       </div>
 
-      <br>
-      <br>
+      <br />
 
       <form id="goalForm">
-        <label for="goalInput">Type your goal here:</label><br>
-        <input type="text" id="goalInput" name="goalInput"><br>
-        <input type="submit" value="Add goal!">
+        <label for="goalInput">Type your goal here:</label><br />
+        <input type="text" id="goalInput" name="goalInput" /><br />
+        <input type="submit" value="Add Goal" />
       </form>
-
     </main>
 
     <script src="index.js" defer></script>

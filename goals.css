@@ -192,7 +192,9 @@ img {
   margin-bottom: 2rem;
 }
 
-.easy, .medium, .hard {
+.easy,
+.medium,
+.hard {
   width: 600px;
   height: 220px;
   background: linear-gradient(var(--body-color), var(--first-color-alt));
@@ -225,9 +227,9 @@ img {
 
 hr {
   border: 0;
-  clear:both;
-  display:block;
-  width: 96%;               
+  clear: both;
+  display: block;
+  width: 96%;
   background-color: #694769;
   height: 1px;
 }
@@ -255,101 +257,101 @@ hr {
 /*=============== CALENDAR ===============*/
 
 .week {
-  left: 3.2rem; 
-  top: 137px; 
-  position: absolute; 
-  justify-content: flex-start; 
-  align-items: flex-start; 
-  gap: 18px; 
-  display: inline-flex
+  left: 3.2rem;
+  top: 137px;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 18px;
+  display: inline-flex;
 }
 
 .day-selected {
-  padding-left: 18px; 
-  padding-right: 18px; 
-  padding-top: 13px; 
-  padding-bottom: 13px; 
-  background: #694384; 
-  border-radius: 28.50px; 
-  overflow: hidden; 
-  border: 2px #694384 solid; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 10px; 
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background: #694384;
+  border-radius: 28.5px;
+  overflow: hidden;
+  border: 2px #694384 solid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   display: inline-flex;
-  color: white; 
-  font-size: 20px; 
-  font-weight: 400; 
-  word-wrap: break-word
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
 .day {
-  padding-left: 18px; 
-  padding-right: 18px; 
-  padding-top: 13px; 
-  padding-bottom: 13px; 
-  background: white; 
-  border-radius: 28.50px; 
-  overflow: hidden; 
-  border: 2px #694384 solid; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 10px; 
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background: white;
+  border-radius: 28.5px;
+  overflow: hidden;
+  border: 2px #694384 solid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   display: inline-flex;
-  color: #694384; 
-  font-size: 20px; 
-  font-weight: 400; 
-  word-wrap: break-word
+  color: #694384;
+  font-size: 20px;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
 .day-name {
-  top: 99px; 
-  position: absolute; 
-  color: var(--title-color); 
-  font-size: 20px; 
-  font-weight: 400; 
+  top: 99px;
+  position: absolute;
+  color: var(--title-color);
+  font-size: 20px;
+  font-weight: 400;
   word-wrap: break-word;
 }
 
 .month {
-  left: 150px; 
-  top: 10px; 
-  position: absolute; 
-  color: var(--text-color); 
-  font-size: 64px; 
-  font-weight: 600; 
-  word-wrap: break-word
+  left: 150px;
+  top: 10px;
+  position: absolute;
+  color: var(--text-color);
+  font-size: 64px;
+  font-weight: 600;
+  word-wrap: break-word;
 }
 
 .date {
-  left: 162px; 
-  top: 223px; 
-  position: absolute; 
-  color: var(--title-color); 
-  font-size: 24px; 
-  font-style: italic; 
-  font-weight: 400; 
-  word-wrap: break-word
+  left: 162px;
+  top: 223px;
+  position: absolute;
+  color: var(--title-color);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
 .data {
-  left: 30px; 
-  top: 280px; 
-  width: 575px; 
-  height: 490px; 
-  position: relative; 
-  border-radius: 28.50px; 
-  background: var(--container-color)
+  left: 30px;
+  top: 280px;
+  width: 575px;
+  height: 490px;
+  position: relative;
+  border-radius: 28.5px;
+  background: var(--container-color);
 }
 
 .data-name {
-  left: 40px; 
-  position: absolute; 
-  color: var(--text-color); 
-  font-size: 25px; 
-  font-weight: 600; 
+  left: 40px;
+  position: absolute;
+  color: var(--text-color);
+  font-size: 25px;
+  font-weight: 600;
   word-wrap: break-word;
 }
 
@@ -366,10 +368,11 @@ hr {
 
 fieldset {
   padding: 0.5rem;
-  border: 0
+  border: 0;
 }
 
-fieldset textarea,input {
+fieldset textarea,
+input {
   background-color: #f7f7f7;
   box-shadow: 0 0 0 1px var(--body-color);
   padding: 0.5rem;
@@ -386,14 +389,16 @@ fieldset textarea {
   max-height: 60px;
 }
 
-fieldset textarea:hover,input:hover {
+fieldset textarea:hover,
+input:hover {
   box-shadow: 0 0 0 1px var(--text-color);
   background-color: #fff;
 }
 
-fieldset textarea:focus,input:focus {
+fieldset textarea:focus,
+input:focus {
   box-shadow: 0 0 0 1px var(--text-color),
-              inset 0 2px 5px -1px rgba(0,0,0,0.25);
+    inset 0 2px 5px -1px rgba(0, 0, 0, 0.25);
 }
 
 .left-field {
@@ -636,109 +641,115 @@ fieldset textarea:focus,input:focus {
 
 /*========= PROGRESS BARS =========*/
 
-
-h2, h3 {
-    padding-bottom: 10px;
-    padding-top: 0px;
-    padding-left: 10px;
-}
-
-h1 {
-    color: var(--text-color); 
-    font-size: 64px; 
-    font-weight: 600; 
-    padding-bottom: 10px;
-    padding-top: 0px;
-    padding-left: 10px;
+h2,
+h3 {
+  padding-bottom: 10px;
+  padding-top: 0px;
+  padding-left: 20px;
 }
 
 .wrapper {
-    width: 500px;
-    padding-left: 10px;
+  width: 500px;
+  padding-left: 10px;
 }
 
 .progress-bar {
-    width: 100%;
-    background-color: #e0e0e0;
-    padding-top: 0px;
-    border-radius: 3px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+  width: 100%;
+  background-color: #e0e0e0;
+  padding-top: 0px;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .progress-bar-fill {
-    display: block;
-    height: 22px;
-    background-color: #933150;
-    border-radius: 3px;
-    
-    transition: width 500ms ease-in-out;
+  display: block;
+  height: 22px;
+  background-color: #933150;
+  border-radius: 3px;
+
+  transition: width 500ms ease-in-out;
 }
 
 /*========= GOALS SPECIFIC STYLING =========*/
-input[type=submit] {
-    padding: 0.7rem 1rem;
-    border-radius: 10px;
-    background: var(--title-color);
-    font-size: var(--normal-font-size);
-    color: white;
-    border: none;
+input[type="submit"] {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  background: var(--title-color);
+  font-size: var(--normal-font-size);
+  color: white;
+  border: none;
 }
 
-input[type=text] {
-    padding: 5px 50px;
-    margin: 10px 2px;
+input[type="text"] {
+  padding: 5px 50px;
+  margin: 10px 2px;
 }
 
 .list-item:not(.nav-menu) {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    font-size: 18px;
-  
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  font-size: 18px;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .checked:not(.nav-menu) {
-    background: #b38fb9;
-    text-decoration: line-through;
+  background: var(--body-color);
+  text-decoration: line-through;
 }
 
 .checked::before {
-    display: inline-block;
-    transform: rotate(45deg);
-    height: 25px;
-    width: 12px;
-    margin-left: 60%; 
-    border-bottom: 7px solid #78b13f;
-    border-right: 7px solid #78b13f;
+  display: inline-block;
+  transform: rotate(45deg);
+  height: 25px;
+  width: 12px;
+  margin-left: 60%;
+  border-bottom: 7px solid #78b13f;
+  border-right: 7px solid #78b13f;
 }
 
 .close:not(.nav-menu) {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
 }
 
 #goalForm {
-    padding-bottom: 10px;
-    padding-top: 0px;
-    padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  padding-left: 20px;
 }
 
 .static-goals {
-    padding: 15px;
-    border-radius: 25px;
-    background-color: #cab7ce;
+  padding: 15px;
+  border-radius: 25px;
+  background-color: var(--container-color);
 }
 
 .list-all {
-    padding: 15px;
-    border-radius: 25px;
-    height: auto; 
-    background-color: #cab7ce;
+  padding: 15px;
+  border-radius: 25px;
+  height: auto;
+  background-color: var(--container-color);
+}
+
+#goalInput {
+  width: 95%;
+  height: 50px;
+  background-color: #f5f5f5;
+  font-size: var(--normal-font-size);
+  margin-bottom: 20px;
+  padding: 0.15rem 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  border-bottom: 2px solid transparent;
+  border-color: var(--first-color);
+  line-height: 1.15;
 }
