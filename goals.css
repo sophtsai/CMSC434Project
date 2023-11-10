@@ -729,11 +729,11 @@ input[type="text"] {
   padding-left: 20px;
 }
 
-.input-goals form:focus-within img {
+.input-goals:focus-within img {
   display: inline-block;
 }
 
-.input-goals form img {
+.input-goals img {
   display: none;
 }
 
