@@ -182,6 +182,76 @@ img {
   font-weight: 600;
 }
 
+/*=============== EXERCISES ===============*/
+
+.exercise-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.easy, .medium, .hard {
+  width: 600px;
+  height: 220px;
+  background: linear-gradient(var(--body-color), var(--first-color-alt));
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.instructions {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  text-align: center;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color: #694769;
+  height: 1px;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.top {
+  display: flex;
+  padding: 10px;
+  text-align: center;
+}
+
 /*=============== CALENDAR ===============*/
 
 .week {
