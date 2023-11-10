@@ -254,6 +254,11 @@ hr {
   text-align: center;
 }
 
+.bottom {
+  display: flex;
+  text-align: center;
+}
+
 /*=============== CALENDAR ===============*/
 
 .week {
