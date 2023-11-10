@@ -59,30 +59,72 @@
     <!--=============== ADD YOUR CODE BELOW HERE ===============-->
     <main class="content">
       <h1 style="position: relative; left: 13.5rem; padding: 20px">Profile</h1>
-      <img src="Assets/strawberries.png" alt="" class="nav-img" style="width: 200px; height: 200px; position: absolute; left: 12.5rem; padding: 10px"/>
-      <div id="display-name" style="width: 640px; position: relative; top: 250px; text-align: center; font-size: 2rem"></div>
-      <div id="display-sex" style="position: relative; top: 300px; left: 15rem; padding: 10px"></div>
-      <div id="display-age" style="position: relative; top: 300px; left: 15rem; padding: 10px"></div>
-      <button class="data-entry-btn add-button" onclick="window.location.href = 'editProfile.html';" style="position: relative; top: 350px; left: 220px">Edit Profile</button>
+      <img
+        src="Assets/strawberries.png"
+        alt=""
+        class="nav-img"
+        style="
+          width: 200px;
+          height: 200px;
+          position: absolute;
+          left: 12.5rem;
+          padding: 10px;
+        " />
+      <div
+        id="display-name"
+        style="
+          width: 640px;
+          position: relative;
+          top: 250px;
+          text-align: center;
+          font-size: 2rem;
+        "></div>
+      <div
+        id="display-sex"
+        style="
+          position: relative;
+          top: 300px;
+          left: 15rem;
+          padding: 10px;
+        "></div>
+      <div
+        id="display-age"
+        style="
+          position: relative;
+          top: 300px;
+          left: 15rem;
+          padding: 10px;
+        "></div>
+      <button
+        class="data-entry-btn add-button"
+        onclick="window.location.href = 'editProfile.html';"
+        style="position: relative; top: 350px; left: 220px">
+        Edit Profile
+      </button>
     </main>
 
     <script>
-      window.onload = function() {
+      window.onload = function () {
         var profileName = localStorage.getItem("profileName");
         if (profileName == null) {
           profileName = "Straw B. Berry";
+          localStorage.setItem("profileName", profileName);
         }
         var profileSex = localStorage.getItem("profileSex");
         if (profileSex == null) {
           profileSex = "Female";
+          localStorage.setItem("profileSex", profileSex);
         }
         var profileAge = localStorage.getItem("profileAge");
         if (profileAge == null) {
           profileAge = 20;
+          localStorage.setItem("profileAge", profileAge);
         }
         document.getElementById("display-name").textContent = profileName;
-        document.getElementById("display-sex").textContent = "Sex: " + profileSex;
-        document.getElementById("display-age").textContent = "Age: " + profileAge;
+        document.getElementById("display-sex").textContent =
+          "Sex: " + profileSex;
+        document.getElementById("display-age").textContent =
+          "Age: " + profileAge;
       };
     </script>
   </body>

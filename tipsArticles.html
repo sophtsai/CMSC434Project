@@ -70,7 +70,7 @@
       // Get URL parameter
       const urlParams = new URLSearchParams(window.location.search);
       var sectionName = urlParams.get("section");
-      var age = 70;
+      var age = localStorage.getItem("profileAge");
 
       if (sectionName == "exercise") {
         if (age <= 18) {
