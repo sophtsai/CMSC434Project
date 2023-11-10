@@ -185,101 +185,101 @@ img {
 /*=============== CALENDAR ===============*/
 
 .week {
-  left: 3.2rem; 
-  top: 137px; 
-  position: absolute; 
-  justify-content: flex-start; 
-  align-items: flex-start; 
-  gap: 18px; 
-  display: inline-flex
+  left: 3.2rem;
+  top: 137px;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 18px;
+  display: inline-flex;
 }
 
 .day-selected {
-  padding-left: 18px; 
-  padding-right: 18px; 
-  padding-top: 13px; 
-  padding-bottom: 13px; 
-  background: #694384; 
-  border-radius: 28.50px; 
-  overflow: hidden; 
-  border: 2px #694384 solid; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 10px; 
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background: #694384;
+  border-radius: 28.5px;
+  overflow: hidden;
+  border: 2px #694384 solid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   display: inline-flex;
-  color: white; 
-  font-size: 20px; 
-  font-weight: 400; 
-  word-wrap: break-word
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
 .day {
-  padding-left: 18px; 
-  padding-right: 18px; 
-  padding-top: 13px; 
-  padding-bottom: 13px; 
-  background: white; 
-  border-radius: 28.50px; 
-  overflow: hidden; 
-  border: 2px #694384 solid; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 10px; 
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background: white;
+  border-radius: 28.5px;
+  overflow: hidden;
+  border: 2px #694384 solid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   display: inline-flex;
-  color: #694384; 
-  font-size: 20px; 
-  font-weight: 400; 
-  word-wrap: break-word
+  color: #694384;
+  font-size: 20px;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
 .day-name {
-  top: 99px; 
-  position: absolute; 
-  color: var(--title-color); 
-  font-size: 20px; 
-  font-weight: 400; 
+  top: 99px;
+  position: absolute;
+  color: var(--title-color);
+  font-size: 20px;
+  font-weight: 400;
   word-wrap: break-word;
 }
 
 .month {
-  left: 150px; 
-  top: 10px; 
-  position: absolute; 
-  color: var(--text-color); 
-  font-size: 64px; 
-  font-weight: 600; 
-  word-wrap: break-word
+  left: 150px;
+  top: 10px;
+  position: absolute;
+  color: var(--text-color);
+  font-size: 64px;
+  font-weight: 600;
+  word-wrap: break-word;
 }
 
 .date {
-  left: 162px; 
-  top: 223px; 
-  position: absolute; 
-  color: var(--title-color); 
-  font-size: 24px; 
-  font-style: italic; 
-  font-weight: 400; 
-  word-wrap: break-word
+  left: 162px;
+  top: 223px;
+  position: absolute;
+  color: var(--title-color);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
 .data {
-  left: 30px; 
-  top: 280px; 
-  width: 575px; 
-  height: 490px; 
-  position: relative; 
-  border-radius: 28.50px; 
-  background: var(--container-color)
+  left: 30px;
+  top: 280px;
+  width: 575px;
+  height: 490px;
+  position: relative;
+  border-radius: 28.5px;
+  background: var(--container-color);
 }
 
 .data-name {
-  left: 40px; 
-  position: absolute; 
-  color: var(--text-color); 
-  font-size: 25px; 
-  font-weight: 600; 
+  left: 40px;
+  position: absolute;
+  color: var(--text-color);
+  font-size: 25px;
+  font-weight: 600;
   word-wrap: break-word;
 }
 
@@ -296,10 +296,11 @@ img {
 
 fieldset {
   padding: 0.5rem;
-  border: 0
+  border: 0;
 }
 
-fieldset textarea,input {
+fieldset textarea,
+input {
   background-color: #f7f7f7;
   box-shadow: 0 0 0 1px var(--body-color);
   padding: 0.5rem;
@@ -316,14 +317,16 @@ fieldset textarea {
   max-height: 60px;
 }
 
-fieldset textarea:hover,input:hover {
+fieldset textarea:hover,
+input:hover {
   box-shadow: 0 0 0 1px var(--text-color);
   background-color: #fff;
 }
 
-fieldset textarea:focus,input:focus {
+fieldset textarea:focus,
+input:focus {
   box-shadow: 0 0 0 1px var(--text-color),
-              inset 0 2px 5px -1px rgba(0,0,0,0.25);
+    inset 0 2px 5px -1px rgba(0, 0, 0, 0.25);
 }
 
 .left-field {
@@ -562,4 +565,9 @@ fieldset textarea:focus,input:focus {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+/*========= PROFILE PAGE =========*/
+profile-content {
+  display: flex;
 }
