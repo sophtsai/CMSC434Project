@@ -60,7 +60,25 @@
     <main class="content">
       <h1 class="section-title">Goals</h1>
 
-      <h2>Complete ours...</h2>
+      <form id="goalForm">
+        <label for="goalInput">Type your goal here:</label><br />
+        <input type="text" id="goalInput" name="goalInput" /><br />
+        <input type="submit" value="Add Goal" />
+      </form>
+
+      <br />
+
+      <h2>Complete yours...</h2>
+      <div class="list-all">
+        <h3>To-Do List</h3>
+        <ul id="listUL">
+          <li class="checked list-item">hello</li>
+        </ul>
+      </div>
+
+      <br />
+
+      <h2>Or ours!</h2>
       <div class="wrapper">
         <div class="static-goals">
           <h3>Log 5 days in a row</h3>
@@ -77,22 +95,12 @@
           </div>
         </div>
         <br />
-        <h2>...or your own!</h2>
-        <div class="list-all">
-          <h3>To-Do List</h3>
-          <ul id="listUL">
-            <li class="checked list-item">hello</li>
-          </ul>
-        </div>
+      
       </div>
 
       <br />
 
-      <form id="goalForm">
-        <label for="goalInput">Type your goal here:</label><br />
-        <input type="text" id="goalInput" name="goalInput" /><br />
-        <input type="submit" value="Add Goal" />
-      </form>
+      
     </main>
 
     <script src="index.js" defer></script>
