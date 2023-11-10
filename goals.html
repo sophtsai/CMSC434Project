@@ -60,17 +60,24 @@
     <main class="content">
       <h1 class="section-title">Goals</h1>
 
-      <form id="goalForm">
-        <label for="goalInput">Type your goal here:</label><br />
-        <input type="text" id="goalInput" name="goalInput" /><br />
-        <input type="submit" value="Add Goal" />
-      </form>
+      <div class="input-goals">
+        <form id="goalForm">
+          <label for="goalInput">Type your goal here:</label><br />
+          <input type="text" id="goalInput" name="goalInput" /><br />
+          <input type="submit" value="Add Goal" />
+          <img
+            src="Assets/keyboard.png"
+            alt="keyboard"
+            id="keyboard"
+            class="keyboardImg" />
+        </form>
+      </div>
 
       <br />
 
       <h2>Complete yours...</h2>
       <div class="list-all">
-        <h3>To-Do List</h3>
+        <h3>Personal Goals</h3>
         <ul id="listUL">
           <li class="checked list-item">hello</li>
         </ul>
@@ -95,12 +102,9 @@
           </div>
         </div>
         <br />
-      
       </div>
 
       <br />
-
-      
     </main>
 
     <script src="index.js" defer></script>

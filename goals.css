@@ -649,8 +649,8 @@ h3 {
 }
 
 .wrapper {
-  width: 500px;
-  padding-left: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .progress-bar {
@@ -726,6 +726,14 @@ input[type="text"] {
   padding-left: 20px;
 }
 
+.input-goals form:focus-within img {
+  display: inline-block;
+}
+
+.input-goals form img {
+  display: none;
+}
+
 .static-goals {
   padding: 15px;
   border-radius: 25px;
@@ -736,6 +744,8 @@ input[type="text"] {
   padding: 15px;
   border-radius: 25px;
   height: auto;
+  margin-left: 20px;
+  margin-right: 20px;
   background-color: var(--container-color);
 }
 
