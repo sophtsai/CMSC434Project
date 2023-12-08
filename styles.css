@@ -2,7 +2,7 @@
   --header-height: 4rem;
 
   /*========== Colors ==========*/
-  --first-color: #e27396;
+  --first-color: #b5496b;
   --first-color-alt: #694769;
   --title-color: #933150;
   --text-color: #694384;
@@ -15,7 +15,7 @@
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   --h1-font-size: 2.25rem;
-  --normal-font-size: 1.25rem;
+  --normal-font-size: 1.50rem;
 }
 
 * {
