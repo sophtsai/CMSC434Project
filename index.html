@@ -132,12 +132,12 @@
       if (totalDurExercise != null && totalDurExercise != 0) {
         document.getElementById("display-total-dur").textContent = "Total Exercise Duration: " + totalDurExercise + " min";
       } else {
-        document.getElementById("display-total-dur").textContent = "No log";
+        document.getElementById("display-total-dur").textContent = "Total Exercise Duration: No log";
       }
       if (totalCalExercise != null && totalCalExercise != 0) {
         document.getElementById("display-total-cal").textContent = "Total Calories Burned: " + totalCalExercise + " cal";
       } else {
-        document.getElementById("display-total-cal").textContent = "No log";
+        document.getElementById("display-total-cal").textContent = "Total Calories Burned: No log";
       }
 
       // FOOD
@@ -145,7 +145,7 @@
       if (totalCalFood != null && totalCalFood != 0) {
         document.getElementById("display-total-food-cal").textContent = "Total Calories Eaten: " + totalCalFood + " cal";
       } else {
-        document.getElementById("display-total-food-cal").textContent = "No log";
+        document.getElementById("display-total-food-cal").textContent = "Total Calories Eaten: No log";
       }
 
       // WEIGHT
@@ -153,7 +153,7 @@
       if (storedWeight != null && storedWeight != 0) {
         document.getElementById("display-weight").textContent = "Weight: " + storedWeight + " lbs";
       } else {
-        document.getElementById("display-weight").textContent = "No log";
+        document.getElementById("display-weight").textContent = "Weight: No log";
       }
 
       // NOTES
@@ -173,13 +173,13 @@
       if (totalDurExercise != 0 && totalCalExercise != 0) {
         exerciseIcon.innerHTML = img;
       }
-      if (totalCalFood != 0) {
+      if (totalCalFood != null && totalCalFood != 0) {
         foodIcon.innerHTML = img;
       }
-      if (storedWeight != 0) {
+      if (storedWeight != null && storedWeight != 0) {
         weightIcon.innerHTML = img;
       }
-      if (storedNotes != "") {
+      if (storedNotes != null && storedNotes != "") {
         notesIcon.innerHTML = img;
       }
     </script>
