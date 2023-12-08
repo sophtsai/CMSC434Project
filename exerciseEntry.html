@@ -66,12 +66,12 @@
       <h2 class="entry-title">Log Exercise</h2>
       <div class="data-table-entry">
         <div class="input-align">
-          <p style="padding-right: 25px">Activity</p>
+          <p style="padding-right: 23px">Exercise</p>
           <input
             class="input"
             id="activity-input"
             type="text"
-            style="width: 200px" />
+            style="width: 214px" />
           <img
             src="Assets/keyboard.png"
             alt="keyboard"
@@ -103,14 +103,14 @@
             class="keyboardImg" />
         </div>
         <div class="input-align">
-          <p style="padding-right: 21px">Calories</p>
+          <p style="padding-right: 23px">Calories</p>
           <input
             class="input"
             id="exercise-cal-input"
             type="number"
             min="0"
             oninput="validity.valid||(value='');"
-            style="width: 200px" />
+            style="width: 214px" />
           <img
             src="Assets/numpad.png"
             alt="keyboard"
@@ -232,8 +232,8 @@
 
         // Set cell values with inputs
         cell1.textContent = activityInput;
-        cell2.innerHTML =
-          durationHrInput + " hr <br>" + durationMinInput + " min";
+        cell2.textContent =
+          durationHrInput + " hr " + durationMinInput + " min";
         cell3.textContent = calInput;
 
         var image = document.createElement("img");
@@ -249,7 +249,7 @@
           removeObjectById(entry.id);
           document.getElementById("display-total-dur").innerHTML =
             Math.floor(parseInt(totalDuration) / 60) +
-            " hr <br>" +
+            " hr " +
             Math.floor(parseInt(totalDuration) % 60) +
             " min ";
           document.getElementById("display-total-exercise-cal").textContent =
@@ -268,7 +268,7 @@
         entryId++;
         document.getElementById("display-total-dur").innerHTML =
           Math.floor(parseInt(totalDuration) / 60) +
-          " hr <br>" +
+          " hr " +
           Math.floor(parseInt(totalDuration) % 60) +
           " min ";
         document.getElementById("display-total-exercise-cal").textContent =
@@ -282,7 +282,7 @@
       }
       document.getElementById("display-total-dur").innerHTML =
         Math.floor(parseInt(totalDuration) / 60) +
-        " hr <br>" +
+        " hr " +
         Math.floor(parseInt(totalDuration) % 60) +
         " min ";
       document.getElementById("display-total-exercise-cal").textContent =
