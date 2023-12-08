@@ -13,14 +13,11 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="logSelection.html">
-          <button class="data-entry-btn">Cancel</button>
+          <img src="Assets/arrow-back-pink.png" width="60px" />
         </a>
         <img src="Assets/chevron-left-purple.png" />
         <h1 class="data-date">Nov 1, 2023</h1>
         <img src="Assets/chevron-right-purple.png" />
-        <a href="logSelection.html">
-          <button class="data-entry-btn" id="weight-save">Save</button>
-        </a>
 
         <div class="nav-menu" id="nav-menu">
           <ul class="nav-list">
@@ -68,7 +65,12 @@
       <h2 class="entry-title">Log Weight</h2>
       <div class="input-align">
         <div id="weight-container">
-          <input class="input" id="weight-input" type="number" />
+          <input
+            class="input"
+            id="weight-input"
+            type="number"
+            min="0"
+            oninput="validity.valid||(value='');" />
           <p>pounds</p>
         </div>
         <img
@@ -77,6 +79,9 @@
           id="numpad"
           class="keyboardImg" />
       </div>
+      <a href="logSelection.html">
+        <button class="data-entry-btn" id="weight-save">Save</button>
+      </a>
     </main>
 
     <script>
@@ -97,13 +102,12 @@
 
       window.onbeforeunload = function () {
         const weightValue = weightInput.value;
-        
+
         if (weightValue.trim() !== "") {
           localStorage.setItem("storedWeight", weightValue);
         } else {
           localStorage.setItem("storedWeight", 0);
         }
-
       };
     </script>
   </body>

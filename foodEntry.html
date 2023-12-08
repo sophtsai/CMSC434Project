@@ -13,14 +13,12 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="logSelection.html">
-          <button class="data-entry-btn">Cancel</button>
+          <img src="Assets/arrow-back-pink.png" width="60px" />
         </a>
         <img src="Assets/chevron-left-purple.png" />
         <h1 class="data-date">Nov 1, 2023</h1>
         <img src="Assets/chevron-right-purple.png" />
-        <a href="logSelection.html">
-          <button class="data-entry-btn" id="food-save-btn">Save</button>
-        </a>
+        <img src="Assets/strawberries.png" alt="" class="nav-img" />
 
         <div class="nav-menu" id="nav-menu">
           <ul class="nav-list">
@@ -86,6 +84,8 @@
             class="input"
             id="food-cal-input"
             type="number"
+            min="0"
+            oninput="validity.valid||(value='');"
             style="width: 200px" />
           <img
             src="Assets/numpad.png"
@@ -94,7 +94,9 @@
             class="keyboardImg" />
         </div>
       </div>
-      <button class="data-entry-btn add-button" id="add-food-btn">Add</button>
+      <button class="data-entry-btn add-button" id="add-food-btn">
+        Add Food
+      </button>
       <table class="styled-table" id="food-table">
         <thead>
           <tr>
@@ -115,7 +117,6 @@
 
     <script>
       const addButton = document.getElementById("add-food-btn");
-      const saveButton = document.getElementById("food-save-btn");
       var foodEntries = [];
       var totalCalories = 0;
       var entryId = 0;
@@ -124,11 +125,6 @@
         const foodInput = document.getElementById("food-input").value;
         const calInput = document.getElementById("food-cal-input").value;
         addRow(foodInput, calInput, true);
-      });
-
-      saveButton.addEventListener("click", function () {
-        localStorage.setItem("foodEntries", JSON.stringify(foodEntries));
-        localStorage.setItem("totalCalFood", totalCalories);
       });
 
       window.onbeforeunload = function () {

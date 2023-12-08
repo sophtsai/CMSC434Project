@@ -13,14 +13,11 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="logSelection.html">
-          <button class="data-entry-btn">Cancel</button>
+          <img src="Assets/arrow-back-pink.png" width="60px" />
         </a>
         <img src="Assets/chevron-left-purple.png" />
         <h1 class="data-date">Nov 1, 2023</h1>
         <img src="Assets/chevron-right-purple.png" />
-        <a href="logSelection.html">
-          <button class="data-entry-btn" id="exercise-save-btn">Save</button>
-        </a>
 
         <div class="nav-menu" id="nav-menu">
           <ul class="nav-list">
@@ -60,6 +57,7 @@
             </li>
           </ul>
         </div>
+        <img src="Assets/strawberries.png" alt="" class="nav-img" />
       </nav>
     </header>
 
@@ -68,7 +66,7 @@
       <h2 class="entry-title">Log Exercise</h2>
       <div class="data-table-entry">
         <div class="input-align">
-          <p style="padding-right: 65px">Activity</p>
+          <p style="padding-right: 25px">Activity</p>
           <input
             class="input"
             id="activity-input"
@@ -81,12 +79,23 @@
             class="keyboardImg" />
         </div>
         <div class="input-align">
-          <p>Duration (min)</p>
+          <p style="padding-right: 13px">Duration</p>
           <input
             class="input"
-            id="duration-input"
+            id="duration-hr-input"
             type="number"
-            style="width: 200px" />
+            min="0"
+            oninput="validity.valid||(value='');"
+            style="width: 70px; margin-right: 0" />
+          <p>hr</p>
+          <input
+            class="input"
+            id="duration-min-input"
+            type="number"
+            min="0"
+            oninput="validity.valid||(value='');"
+            style="width: 70px; margin-right: 0" />
+          <p>min</p>
           <img
             src="Assets/numpad.png"
             alt="keyboard"
@@ -94,11 +103,13 @@
             class="keyboardImg" />
         </div>
         <div class="input-align">
-          <p style="padding-right: 61px">Calories</p>
+          <p style="padding-right: 21px">Calories</p>
           <input
             class="input"
             id="exercise-cal-input"
             type="number"
+            min="0"
+            oninput="validity.valid||(value='');"
             style="width: 200px" />
           <img
             src="Assets/numpad.png"
@@ -108,13 +119,13 @@
         </div>
       </div>
       <button class="data-entry-btn add-button" id="add-exercise-btn">
-        Add
+        Add Exercise
       </button>
       <table class="styled-table" id="exercise-table">
         <thead>
           <tr>
-            <th width="30%">Activity</th>
-            <th width="30%">Duration (min)</th>
+            <th width="30%">Exercise</th>
+            <th width="30%">Duration</th>
             <th width="30%">Calories</th>
             <th width="10%"></th>
           </tr>
@@ -123,11 +134,17 @@
       </table>
       <div class="total-row">
         <div class="input-align">
-          <p>Total Duration:</p>
+          <p>
+            Total <br />
+            Duration:
+          </p>
           <p id="display-total-dur"></p>
         </div>
         <div class="input-align">
-          <p>Total Calories:</p>
+          <p>
+            Total <br />
+            Calories:
+          </p>
           <p id="display-total-exercise-cal"></p>
         </div>
       </div>
@@ -135,7 +152,6 @@
 
     <script>
       const addButton = document.getElementById("add-exercise-btn");
-      const saveButton = document.getElementById("exercise-save-btn");
       var exerciseEntries = [];
       var totalDuration = 0;
       var totalCalories = 0;
@@ -143,18 +159,18 @@
 
       addButton.addEventListener("click", function () {
         const activityInput = document.getElementById("activity-input").value;
-        const durationInput = document.getElementById("duration-input").value;
+        const durationHrInput =
+          document.getElementById("duration-hr-input").value;
+        const durationMinInput =
+          document.getElementById("duration-min-input").value;
         const calInput = document.getElementById("exercise-cal-input").value;
-        addRow(activityInput, durationInput, calInput, true);
-      });
-
-      saveButton.addEventListener("click", function () {
-        localStorage.setItem(
-          "exerciseEntries",
-          JSON.stringify(exerciseEntries)
+        addRow(
+          activityInput,
+          durationHrInput,
+          durationMinInput,
+          calInput,
+          true
         );
-        localStorage.setItem("totalDurExercise", totalDuration);
-        localStorage.setItem("totalCalExercise", totalCalories);
       });
 
       window.onbeforeunload = function () {
@@ -172,23 +188,37 @@
         );
         if (storedExerciseEntries) {
           storedExerciseEntries.forEach(function (entry, index) {
-            addRow(entry.activity, entry.duration, entry.calories, false);
+            addRow(
+              entry.activity,
+              entry.durationHr,
+              entry.durationMin,
+              entry.calories,
+              false
+            );
           });
         }
       };
 
-      function addRow(activityInput, durationInput, calInput, newInput) {
+      function addRow(
+        activityInput,
+        durationHrInput,
+        durationMinInput,
+        calInput,
+        newInput
+      ) {
         // Add exercise entry to array for storage
         var entry = {
           id: entryId,
           activity: activityInput,
-          duration: durationInput,
+          durationHr: durationHrInput,
+          durationMin: durationMinInput,
           calories: calInput,
         };
         exerciseEntries.push(entry);
 
         // Add to total counts
-        totalDuration += parseInt(durationInput);
+        totalDuration +=
+          60 * parseInt(durationHrInput) + parseInt(durationMinInput);
         totalCalories += parseInt(calInput);
 
         var table = document.getElementById("exercise-table-body");
@@ -202,7 +232,8 @@
 
         // Set cell values with inputs
         cell1.textContent = activityInput;
-        cell2.textContent = durationInput;
+        cell2.innerHTML =
+          durationHrInput + " hr <br>" + durationMinInput + " min";
         cell3.textContent = calInput;
 
         var image = document.createElement("img");
@@ -213,10 +244,14 @@
           var table = row.parentNode;
           table.removeChild(row);
           totalCalories -= parseInt(calInput);
-          totalDuration -= parseInt(durationInput);
+          totalDuration -=
+            60 * parseInt(durationHrInput) + parseInt(durationMinInput);
           removeObjectById(entry.id);
-          document.getElementById("display-total-dur").textContent =
-            totalDuration + " min";
+          document.getElementById("display-total-dur").innerHTML =
+            Math.floor(parseInt(totalDuration) / 60) +
+            " hr <br>" +
+            Math.floor(parseInt(totalDuration) % 60) +
+            " min ";
           document.getElementById("display-total-exercise-cal").textContent =
             totalCalories + " cal";
         };
@@ -225,13 +260,17 @@
         // Clear input fields after adding row
         if (newInput) {
           document.getElementById("activity-input").value = "";
-          document.getElementById("duration-input").value = "";
+          document.getElementById("duration-hr-input").value = "";
+          document.getElementById("duration-min-input").value = "";
           document.getElementById("exercise-cal-input").value = "";
         }
 
         entryId++;
-        document.getElementById("display-total-dur").textContent =
-          totalDuration + " min";
+        document.getElementById("display-total-dur").innerHTML =
+          Math.floor(parseInt(totalDuration) / 60) +
+          " hr <br>" +
+          Math.floor(parseInt(totalDuration) % 60) +
+          " min ";
         document.getElementById("display-total-exercise-cal").textContent =
           totalCalories + " cal";
       }
@@ -241,8 +280,11 @@
           return obj.id !== id;
         });
       }
-      document.getElementById("display-total-dur").textContent =
-        totalDuration + " min";
+      document.getElementById("display-total-dur").innerHTML =
+        Math.floor(parseInt(totalDuration) / 60) +
+        " hr <br>" +
+        Math.floor(parseInt(totalDuration) % 60) +
+        " min ";
       document.getElementById("display-total-exercise-cal").textContent =
         totalCalories + " cal";
     </script>

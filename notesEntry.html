@@ -13,14 +13,11 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="logSelection.html">
-          <button class="data-entry-btn">Cancel</button>
+          <img src="Assets/arrow-back-pink.png" width="60px" />
         </a>
         <img src="Assets/chevron-left-purple.png" />
         <h1 class="data-date">Nov 1, 2023</h1>
         <img src="Assets/chevron-right-purple.png" />
-        <a href="logSelection.html">
-          <button class="data-entry-btn" id="notes-save">Save</button>
-        </a>
 
         <div class="nav-menu" id="nav-menu">
           <ul class="nav-list">
@@ -60,6 +57,7 @@
             </li>
           </ul>
         </div>
+        <img src="Assets/strawberries.png" alt="" class="nav-img" />
       </nav>
     </header>
 
@@ -67,13 +65,19 @@
     <main class="content">
       <h2 class="entry-title">Notes</h2>
       <div class="entry-note">
-        <textarea class="notes-box" id="notes-input"></textarea>
+        <textarea
+          class="notes-box"
+          id="notes-input"
+          style="font-size: 25px"></textarea>
         <img
           src="Assets/keyboard.png"
           alt="keyboard"
           id="keyboard"
           class="keyboardImg" />
       </div>
+      <a href="logSelection.html">
+        <button class="data-entry-btn" id="notes-save">Save</button>
+      </a>
     </main>
 
     <script>
