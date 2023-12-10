@@ -130,9 +130,9 @@
       var totalDurExercise = localStorage.getItem("totalDurExercise");
       var totalCalExercise = localStorage.getItem("totalCalExercise");
       var min = totalDurExercise % 60;
-      var hour = (totalDurExercise-mins)/60;
+      var hour = (totalDurExercise-min)/60;
       if (totalDurExercise != null && totalDurExercise != 0) {
-        document.getElementById("display-total-dur").textContent = "Total Exercise Duration: " + hour + " hr"  + min + " min";
+        document.getElementById("display-total-dur").textContent = "Total Exercise Duration: " + hour + " hr "  + min + " min";
       } else {
         document.getElementById("display-total-dur").textContent = "Total Exercise Duration: No log";
       }
@@ -172,7 +172,7 @@
       var foodIcon = document.getElementById("food-icon");
       var weightIcon = document.getElementById("weight-icon");
       var notesIcon = document.getElementById("notes-icon");
-      if (totalDurExercise != 0 && totalCalExercise != 0) {
+      if (totalDurExercise != null && totalCalExercise != null && totalDurExercise != 0 && totalCalExercise != 0) {
         exerciseIcon.innerHTML = img;
       }
       if (totalCalFood != null && totalCalFood != 0) {
