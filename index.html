@@ -129,8 +129,10 @@
       // EXERCISE
       var totalDurExercise = localStorage.getItem("totalDurExercise");
       var totalCalExercise = localStorage.getItem("totalCalExercise");
+      var min = totalDurExercise % 60;
+      var hour = (totalDurExercise-mins)/60;
       if (totalDurExercise != null && totalDurExercise != 0) {
-        document.getElementById("display-total-dur").textContent = "Total Exercise Duration: " + totalDurExercise + " min";
+        document.getElementById("display-total-dur").textContent = "Total Exercise Duration: " + hour + " hr"  + min + " min";
       } else {
         document.getElementById("display-total-dur").textContent = "Total Exercise Duration: No log";
       }
